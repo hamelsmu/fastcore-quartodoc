@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>. – basics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">.</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/basics.html">General utilities</a></li><li class="breadcrumb-item"><a href="../reference/basics.html">basics</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Function reference</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">General utilities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/basics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/meta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">meta</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/utils.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">utils</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Documentation utilities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/docments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">docments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/docscrape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">docscrape</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#fastcore.basics" id="toc-fastcore.basics" class="nav-link active" data-scroll-target="#fastcore.basics">basics</a>
+  <ul class="collapse">
+  <li><a href="#attributes" id="toc-attributes" class="nav-link" data-scroll-target="#attributes">Attributes</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
+  <ul class="collapse">
+  <li><a href="#fastcore.basics.add_props" id="toc-fastcore.basics.add_props" class="nav-link" data-scroll-target="#fastcore.basics.add_props">add_props</a></li>
+  <li><a href="#fastcore.basics.anno_ret" id="toc-fastcore.basics.anno_ret" class="nav-link" data-scroll-target="#fastcore.basics.anno_ret">anno_ret</a></li>
+  <li><a href="#fastcore.basics.annotations" id="toc-fastcore.basics.annotations" class="nav-link" data-scroll-target="#fastcore.basics.annotations">annotations</a></li>
+  <li><a href="#fastcore.basics.argnames" id="toc-fastcore.basics.argnames" class="nav-link" data-scroll-target="#fastcore.basics.argnames">argnames</a></li>
+  <li><a href="#fastcore.basics.argwhere" id="toc-fastcore.basics.argwhere" class="nav-link" data-scroll-target="#fastcore.basics.argwhere">argwhere</a></li>
+  <li><a href="#fastcore.basics.attrdict" id="toc-fastcore.basics.attrdict" class="nav-link" data-scroll-target="#fastcore.basics.attrdict">attrdict</a></li>
+  <li><a href="#fastcore.basics.basic_repr" id="toc-fastcore.basics.basic_repr" class="nav-link" data-scroll-target="#fastcore.basics.basic_repr">basic_repr</a></li>
+  <li><a href="#fastcore.basics.camel2snake" id="toc-fastcore.basics.camel2snake" class="nav-link" data-scroll-target="#fastcore.basics.camel2snake">camel2snake</a></li>
+  <li><a href="#fastcore.basics.camel2words" id="toc-fastcore.basics.camel2words" class="nav-link" data-scroll-target="#fastcore.basics.camel2words">camel2words</a></li>
+  <li><a href="#fastcore.basics.chunked" id="toc-fastcore.basics.chunked" class="nav-link" data-scroll-target="#fastcore.basics.chunked">chunked</a></li>
+  <li><a href="#fastcore.basics.class2attr" id="toc-fastcore.basics.class2attr" class="nav-link" data-scroll-target="#fastcore.basics.class2attr">class2attr</a></li>
+  <li><a href="#fastcore.basics.compile_re" id="toc-fastcore.basics.compile_re" class="nav-link" data-scroll-target="#fastcore.basics.compile_re">compile_re</a></li>
+  <li><a href="#fastcore.basics.compose" id="toc-fastcore.basics.compose" class="nav-link" data-scroll-target="#fastcore.basics.compose">compose</a></li>
+  <li><a href="#fastcore.basics.concat" id="toc-fastcore.basics.concat" class="nav-link" data-scroll-target="#fastcore.basics.concat">concat</a></li>
+  <li><a href="#fastcore.basics.copy_func" id="toc-fastcore.basics.copy_func" class="nav-link" data-scroll-target="#fastcore.basics.copy_func">copy_func</a></li>
+  <li><a href="#fastcore.basics.custom_dir" id="toc-fastcore.basics.custom_dir" class="nav-link" data-scroll-target="#fastcore.basics.custom_dir">custom_dir</a></li>
+  <li><a href="#fastcore.basics.cycle" id="toc-fastcore.basics.cycle" class="nav-link" data-scroll-target="#fastcore.basics.cycle">cycle</a></li>
+  <li><a href="#fastcore.basics.delegate_attr" id="toc-fastcore.basics.delegate_attr" class="nav-link" data-scroll-target="#fastcore.basics.delegate_attr">delegate_attr</a></li>
+  <li><a href="#fastcore.basics.detuplify" id="toc-fastcore.basics.detuplify" class="nav-link" data-scroll-target="#fastcore.basics.detuplify">detuplify</a></li>
+  <li><a href="#fastcore.basics.eval_type" id="toc-fastcore.basics.eval_type" class="nav-link" data-scroll-target="#fastcore.basics.eval_type">eval_type</a></li>
+  <li><a href="#fastcore.basics.even_mults" id="toc-fastcore.basics.even_mults" class="nav-link" data-scroll-target="#fastcore.basics.even_mults">even_mults</a></li>
+  <li><a href="#fastcore.basics.exec_import" id="toc-fastcore.basics.exec_import" class="nav-link" data-scroll-target="#fastcore.basics.exec_import">exec_import</a></li>
+  <li><a href="#fastcore.basics.exec_local" id="toc-fastcore.basics.exec_local" class="nav-link" data-scroll-target="#fastcore.basics.exec_local">exec_local</a></li>
+  <li><a href="#fastcore.basics.exec_new" id="toc-fastcore.basics.exec_new" class="nav-link" data-scroll-target="#fastcore.basics.exec_new">exec_new</a></li>
+  <li><a href="#fastcore.basics.filter_dict" id="toc-fastcore.basics.filter_dict" class="nav-link" data-scroll-target="#fastcore.basics.filter_dict">filter_dict</a></li>
+  <li><a href="#fastcore.basics.filter_ex" id="toc-fastcore.basics.filter_ex" class="nav-link" data-scroll-target="#fastcore.basics.filter_ex">filter_ex</a></li>
+  <li><a href="#fastcore.basics.filter_keys" id="toc-fastcore.basics.filter_keys" class="nav-link" data-scroll-target="#fastcore.basics.filter_keys">filter_keys</a></li>
+  <li><a href="#fastcore.basics.filter_values" id="toc-fastcore.basics.filter_values" class="nav-link" data-scroll-target="#fastcore.basics.filter_values">filter_values</a></li>
+  <li><a href="#fastcore.basics.first" id="toc-fastcore.basics.first" class="nav-link" data-scroll-target="#fastcore.basics.first">first</a></li>
+  <li><a href="#fastcore.basics.flatten" id="toc-fastcore.basics.flatten" class="nav-link" data-scroll-target="#fastcore.basics.flatten">flatten</a></li>
+  <li><a href="#fastcore.basics.gen" id="toc-fastcore.basics.gen" class="nav-link" data-scroll-target="#fastcore.basics.gen">gen</a></li>
+  <li><a href="#fastcore.basics.get_annotations_ex" id="toc-fastcore.basics.get_annotations_ex" class="nav-link" data-scroll-target="#fastcore.basics.get_annotations_ex">get_annotations_ex</a></li>
+  <li><a href="#fastcore.basics.get_class" id="toc-fastcore.basics.get_class" class="nav-link" data-scroll-target="#fastcore.basics.get_class">get_class</a></li>
+  <li><a href="#fastcore.basics.getattrs" id="toc-fastcore.basics.getattrs" class="nav-link" data-scroll-target="#fastcore.basics.getattrs">getattrs</a></li>
+  <li><a href="#fastcore.basics.getcallable" id="toc-fastcore.basics.getcallable" class="nav-link" data-scroll-target="#fastcore.basics.getcallable">getcallable</a></li>
+  <li><a href="#fastcore.basics.groupby" id="toc-fastcore.basics.groupby" class="nav-link" data-scroll-target="#fastcore.basics.groupby">groupby</a></li>
+  <li><a href="#fastcore.basics.hasattrs" id="toc-fastcore.basics.hasattrs" class="nav-link" data-scroll-target="#fastcore.basics.hasattrs">hasattrs</a></li>
+  <li><a href="#fastcore.basics.ifnone" id="toc-fastcore.basics.ifnone" class="nav-link" data-scroll-target="#fastcore.basics.ifnone">ifnone</a></li>
+  <li><a href="#fastcore.basics.in_" id="toc-fastcore.basics.in_" class="nav-link" data-scroll-target="#fastcore.basics.in_">in_</a></li>
+  <li><a href="#fastcore.basics.instantiate" id="toc-fastcore.basics.instantiate" class="nav-link" data-scroll-target="#fastcore.basics.instantiate">instantiate</a></li>
+  <li><a href="#fastcore.basics.is_array" id="toc-fastcore.basics.is_array" class="nav-link" data-scroll-target="#fastcore.basics.is_array">is_array</a></li>
+  <li><a href="#fastcore.basics.last_index" id="toc-fastcore.basics.last_index" class="nav-link" data-scroll-target="#fastcore.basics.last_index">last_index</a></li>
+  <li><a href="#fastcore.basics.listify" id="toc-fastcore.basics.listify" class="nav-link" data-scroll-target="#fastcore.basics.listify">listify</a></li>
+  <li><a href="#fastcore.basics.loop_first" id="toc-fastcore.basics.loop_first" class="nav-link" data-scroll-target="#fastcore.basics.loop_first">loop_first</a></li>
+  <li><a href="#fastcore.basics.loop_first_last" id="toc-fastcore.basics.loop_first_last" class="nav-link" data-scroll-target="#fastcore.basics.loop_first_last">loop_first_last</a></li>
+  <li><a href="#fastcore.basics.loop_last" id="toc-fastcore.basics.loop_last" class="nav-link" data-scroll-target="#fastcore.basics.loop_last">loop_last</a></li>
+  <li><a href="#fastcore.basics.map_ex" id="toc-fastcore.basics.map_ex" class="nav-link" data-scroll-target="#fastcore.basics.map_ex">map_ex</a></li>
+  <li><a href="#fastcore.basics.maps" id="toc-fastcore.basics.maps" class="nav-link" data-scroll-target="#fastcore.basics.maps">maps</a></li>
+  <li><a href="#fastcore.basics.mapt" id="toc-fastcore.basics.mapt" class="nav-link" data-scroll-target="#fastcore.basics.mapt">mapt</a></li>
+  <li><a href="#fastcore.basics.maybe_attr" id="toc-fastcore.basics.maybe_attr" class="nav-link" data-scroll-target="#fastcore.basics.maybe_attr">maybe_attr</a></li>
+  <li><a href="#fastcore.basics.merge" id="toc-fastcore.basics.merge" class="nav-link" data-scroll-target="#fastcore.basics.merge">merge</a></li>
+  <li><a href="#fastcore.basics.mk_class" id="toc-fastcore.basics.mk_class" class="nav-link" data-scroll-target="#fastcore.basics.mk_class">mk_class</a></li>
+  <li><a href="#fastcore.basics.nested_attr" id="toc-fastcore.basics.nested_attr" class="nav-link" data-scroll-target="#fastcore.basics.nested_attr">nested_attr</a></li>
+  <li><a href="#fastcore.basics.nested_callable" id="toc-fastcore.basics.nested_callable" class="nav-link" data-scroll-target="#fastcore.basics.nested_callable">nested_callable</a></li>
+  <li><a href="#fastcore.basics.nested_idx" id="toc-fastcore.basics.nested_idx" class="nav-link" data-scroll-target="#fastcore.basics.nested_idx">nested_idx</a></li>
+  <li><a href="#fastcore.basics.nested_setdefault" id="toc-fastcore.basics.nested_setdefault" class="nav-link" data-scroll-target="#fastcore.basics.nested_setdefault">nested_setdefault</a></li>
+  <li><a href="#fastcore.basics.not_" id="toc-fastcore.basics.not_" class="nav-link" data-scroll-target="#fastcore.basics.not_">not_</a></li>
+  <li><a href="#fastcore.basics.num_cpus" id="toc-fastcore.basics.num_cpus" class="nav-link" data-scroll-target="#fastcore.basics.num_cpus">num_cpus</a></li>
+  <li><a href="#fastcore.basics.only" id="toc-fastcore.basics.only" class="nav-link" data-scroll-target="#fastcore.basics.only">only</a></li>
+  <li><a href="#fastcore.basics.otherwise" id="toc-fastcore.basics.otherwise" class="nav-link" data-scroll-target="#fastcore.basics.otherwise">otherwise</a></li>
+  <li><a href="#fastcore.basics.partialler" id="toc-fastcore.basics.partialler" class="nav-link" data-scroll-target="#fastcore.basics.partialler">partialler</a></li>
+  <li><a href="#fastcore.basics.patch" id="toc-fastcore.basics.patch" class="nav-link" data-scroll-target="#fastcore.basics.patch">patch</a></li>
+  <li><a href="#fastcore.basics.patch_property" id="toc-fastcore.basics.patch_property" class="nav-link" data-scroll-target="#fastcore.basics.patch_property">patch_property</a></li>
+  <li><a href="#fastcore.basics.patch_to" id="toc-fastcore.basics.patch_to" class="nav-link" data-scroll-target="#fastcore.basics.patch_to">patch_to</a></li>
+  <li><a href="#fastcore.basics.properties" id="toc-fastcore.basics.properties" class="nav-link" data-scroll-target="#fastcore.basics.properties">properties</a></li>
+  <li><a href="#fastcore.basics.range_of" id="toc-fastcore.basics.range_of" class="nav-link" data-scroll-target="#fastcore.basics.range_of">range_of</a></li>
+  <li><a href="#fastcore.basics.renumerate" id="toc-fastcore.basics.renumerate" class="nav-link" data-scroll-target="#fastcore.basics.renumerate">renumerate</a></li>
+  <li><a href="#fastcore.basics.replicate" id="toc-fastcore.basics.replicate" class="nav-link" data-scroll-target="#fastcore.basics.replicate">replicate</a></li>
+  <li><a href="#fastcore.basics.ret_false" id="toc-fastcore.basics.ret_false" class="nav-link" data-scroll-target="#fastcore.basics.ret_false">ret_false</a></li>
+  <li><a href="#fastcore.basics.ret_true" id="toc-fastcore.basics.ret_true" class="nav-link" data-scroll-target="#fastcore.basics.ret_true">ret_true</a></li>
+  <li><a href="#fastcore.basics.risinstance" id="toc-fastcore.basics.risinstance" class="nav-link" data-scroll-target="#fastcore.basics.risinstance">risinstance</a></li>
+  <li><a href="#fastcore.basics.set_nested_idx" id="toc-fastcore.basics.set_nested_idx" class="nav-link" data-scroll-target="#fastcore.basics.set_nested_idx">set_nested_idx</a></li>
+  <li><a href="#fastcore.basics.setattrs" id="toc-fastcore.basics.setattrs" class="nav-link" data-scroll-target="#fastcore.basics.setattrs">setattrs</a></li>
+  <li><a href="#fastcore.basics.setify" id="toc-fastcore.basics.setify" class="nav-link" data-scroll-target="#fastcore.basics.setify">setify</a></li>
+  <li><a href="#fastcore.basics.signature_ex" id="toc-fastcore.basics.signature_ex" class="nav-link" data-scroll-target="#fastcore.basics.signature_ex">signature_ex</a></li>
+  <li><a href="#fastcore.basics.snake2camel" id="toc-fastcore.basics.snake2camel" class="nav-link" data-scroll-target="#fastcore.basics.snake2camel">snake2camel</a></li>
+  <li><a href="#fastcore.basics.sorted_ex" id="toc-fastcore.basics.sorted_ex" class="nav-link" data-scroll-target="#fastcore.basics.sorted_ex">sorted_ex</a></li>
+  <li><a href="#fastcore.basics.stop" id="toc-fastcore.basics.stop" class="nav-link" data-scroll-target="#fastcore.basics.stop">stop</a></li>
+  <li><a href="#fastcore.basics.store_attr" id="toc-fastcore.basics.store_attr" class="nav-link" data-scroll-target="#fastcore.basics.store_attr">store_attr</a></li>
+  <li><a href="#fastcore.basics.str2bool" id="toc-fastcore.basics.str2bool" class="nav-link" data-scroll-target="#fastcore.basics.str2bool">str2bool</a></li>
+  <li><a href="#fastcore.basics.str_enum" id="toc-fastcore.basics.str_enum" class="nav-link" data-scroll-target="#fastcore.basics.str_enum">str_enum</a></li>
+  <li><a href="#fastcore.basics.strcat" id="toc-fastcore.basics.strcat" class="nav-link" data-scroll-target="#fastcore.basics.strcat">strcat</a></li>
+  <li><a href="#fastcore.basics.true" id="toc-fastcore.basics.true" class="nav-link" data-scroll-target="#fastcore.basics.true">true</a></li>
+  <li><a href="#fastcore.basics.try_attrs" id="toc-fastcore.basics.try_attrs" class="nav-link" data-scroll-target="#fastcore.basics.try_attrs">try_attrs</a></li>
+  <li><a href="#fastcore.basics.tuplify" id="toc-fastcore.basics.tuplify" class="nav-link" data-scroll-target="#fastcore.basics.tuplify">tuplify</a></li>
+  <li><a href="#fastcore.basics.type_hints" id="toc-fastcore.basics.type_hints" class="nav-link" data-scroll-target="#fastcore.basics.type_hints">type_hints</a></li>
+  <li><a href="#fastcore.basics.typed" id="toc-fastcore.basics.typed" class="nav-link" data-scroll-target="#fastcore.basics.typed">typed</a></li>
+  <li><a href="#fastcore.basics.union2tuple" id="toc-fastcore.basics.union2tuple" class="nav-link" data-scroll-target="#fastcore.basics.union2tuple">union2tuple</a></li>
+  <li><a href="#fastcore.basics.uniqueify" id="toc-fastcore.basics.uniqueify" class="nav-link" data-scroll-target="#fastcore.basics.uniqueify">uniqueify</a></li>
+  <li><a href="#fastcore.basics.using_attr" id="toc-fastcore.basics.using_attr" class="nav-link" data-scroll-target="#fastcore.basics.using_attr">using_attr</a></li>
+  <li><a href="#fastcore.basics.val2idx" id="toc-fastcore.basics.val2idx" class="nav-link" data-scroll-target="#fastcore.basics.val2idx">val2idx</a></li>
+  <li><a href="#fastcore.basics.with_cast" id="toc-fastcore.basics.with_cast" class="nav-link" data-scroll-target="#fastcore.basics.with_cast">with_cast</a></li>
+  <li><a href="#fastcore.basics.wrap_class" id="toc-fastcore.basics.wrap_class" class="nav-link" data-scroll-target="#fastcore.basics.wrap_class">wrap_class</a></li>
+  <li><a href="#fastcore.basics.zip_cycle" id="toc-fastcore.basics.zip_cycle" class="nav-link" data-scroll-target="#fastcore.basics.zip_cycle">zip_cycle</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="fastcore.basics" class="level1">
+<h1>basics</h1>
+<p><code>basics</code></p>
+<section id="attributes" class="level2">
+<h2 class="anchored" data-anchor-id="attributes">Attributes</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#fastcore.basics.Self">Self</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.arg0">arg0</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.arg1">arg1</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.arg2">arg2</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.arg3">arg3</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.arg4">arg4</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.defaults">defaults</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.inum_methods">inum_methods</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.num_methods">num_methods</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.rnum_methods">rnum_methods</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#fastcore.basics.add_props">add_props</a></td>
+<td>Create properties passing each of <code>range(n)</code> to f</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.anno_ret">anno_ret</a></td>
+<td>Get the return annotation of <code>func</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.annotations">annotations</a></td>
+<td>Annotations for <code>o</code>, or <code>type(o)</code></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.argnames">argnames</a></td>
+<td>Names of arguments to function or frame <code>f</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.argwhere">argwhere</a></td>
+<td>Like <code>filter_ex</code>, but return indices for matching items</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.attrdict">attrdict</a></td>
+<td>Dict from each <code>k</code> in <code>ks</code> to <code>getattr(o,k)</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.basic_repr">basic_repr</a></td>
+<td>Minimal <code>__repr__</code></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.camel2snake">camel2snake</a></td>
+<td>Convert CamelCase to snake_case</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.camel2words">camel2words</a></td>
+<td>Convert CamelCase to ‘spaced words’</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.chunked">chunked</a></td>
+<td>Return batches from iterator <code>it</code> of size <code>chunk_sz</code> (or return <code>n_chunks</code> total)</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.class2attr">class2attr</a></td>
+<td>Return the snake-cased name of the class; strip ending <code>cls_name</code> if it exists.</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.compile_re">compile_re</a></td>
+<td>Compile <code>pat</code> if it’s not None</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.compose">compose</a></td>
+<td>Create a function that composes all functions in <code>funcs</code>, passing along remaining <code>*args</code> and <code>**kwargs</code> to all</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.concat">concat</a></td>
+<td>Concatenate all collections and items as a list</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.copy_func">copy_func</a></td>
+<td>Copy a non-builtin function (NB <code>copy.copy</code> does not work for this)</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.custom_dir">custom_dir</a></td>
+<td>Implement custom <code>__dir__</code>, adding <code>add</code> to <code>cls</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.cycle">cycle</a></td>
+<td>Like <code>itertools.cycle</code> except creates list of <code>None</code>s if <code>o</code> is empty</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.delegate_attr">delegate_attr</a></td>
+<td>Use in <code>__getattr__</code> to delegate to attr <code>to</code> without inheriting from <code>GetAttr</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.detuplify">detuplify</a></td>
+<td>If <code>x</code> is a tuple with one thing, extract it</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.eval_type">eval_type</a></td>
+<td><code>eval</code> a type or collection of types, if needed, for annotations in py3.10+</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.even_mults">even_mults</a></td>
+<td>Build log-stepped array from <code>start</code> to <code>stop</code> in <code>n</code> steps.</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.exec_import">exec_import</a></td>
+<td>Import <code>sym</code> from <code>mod</code> in a new environment</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.exec_local">exec_local</a></td>
+<td>Call <code>exec</code> on <code>code</code> and return the var <code>var_name | | [exec_new](#fastcore.basics.exec_new) | Execute</code>code<code>in a new environment and return it | | [filter_dict](#fastcore.basics.filter_dict) | Filter a</code>dict<code>using</code>func<code>, applied to keys and values | | [filter_ex](#fastcore.basics.filter_ex) | Like</code>filter<code>, but passing</code>kwargs<code>to</code>f<code>, defaulting</code>f<code>to</code>noop<code>, and adding</code>negate<code>and</code>gen<code>| | [filter_keys](#fastcore.basics.filter_keys) | Filter a</code>dict<code>using</code>func<code>, applied to keys | | [filter_values](#fastcore.basics.filter_values) | Filter a</code>dict<code>using</code>func<code>, applied to values | | [first](#fastcore.basics.first) | First element of</code>x<code>, optionally filtered by</code>f<code>, or None if missing | | [flatten](#fastcore.basics.flatten) | Concatenate all collections and items as a generator | | [gen](#fastcore.basics.gen) | Like</code>(func(o) for o in seq if cond(func(o)))<code>but handles</code>StopIteration<code>| | [get_annotations_ex](#fastcore.basics.get_annotations_ex) | Backport of py3.10</code>get_annotations<code>that returns globals/locals | | [get_class](#fastcore.basics.get_class) | Dynamically create a class, optionally inheriting from</code>sup<code>, containing</code>fld_names<code>| | [getattrs](#fastcore.basics.getattrs) | List of all</code>attrs<code>in</code>o<code>| | [getcallable](#fastcore.basics.getcallable) | Calls</code>getattr<code>with a default of</code>noop<code>| | [groupby](#fastcore.basics.groupby) | Like</code>itertools.groupby<code>but doesn't need to be sorted, and isn't lazy, plus some extensions | | [hasattrs](#fastcore.basics.hasattrs) | Test whether</code>o<code>contains all</code>attrs<code>| | [ifnone](#fastcore.basics.ifnone) |</code>b<code>if</code>a<code>is None else</code>a<code>| | [in_](#fastcore.basics.in_) |</code>True<code>if</code>x in a<code>| | [instantiate](#fastcore.basics.instantiate) | Instantiate</code>t<code>if it's a type, otherwise do nothing | | [is_array](#fastcore.basics.is_array) |</code>True<code>if</code>x<code>supports</code><strong>array</strong><code>or</code>iloc<code>| | [last_index](#fastcore.basics.last_index) | Finds the last index of occurence of</code>x<code>in</code>o<code>(returns -1 if no occurence) | | [listify](#fastcore.basics.listify) | Convert</code>o<code>to a</code>list<code>| | [loop_first](#fastcore.basics.loop_first) | Iterate and generate a tuple with a flag for first value. | | [loop_first_last](#fastcore.basics.loop_first_last) | Iterate and generate a tuple with a flag for first and last value. | | [loop_last](#fastcore.basics.loop_last) | Iterate and generate a tuple with a flag for last value. | | [map_ex](#fastcore.basics.map_ex) | Like</code>map<code>, but use</code>bind<code>, and supports</code>str<code>and indexing | | [maps](#fastcore.basics.maps) | Like</code>map<code>, except funcs are composed first | | [mapt](#fastcore.basics.mapt) | Tuplified</code>map<code>| | [maybe_attr](#fastcore.basics.maybe_attr) |</code>getattr(o,attr,o)<code>| | [merge](#fastcore.basics.merge) | Merge all dictionaries in</code>ds<code>| | [mk_class](#fastcore.basics.mk_class) | Create a class using</code>get_class<code>and add to the caller's module | | [nested_attr](#fastcore.basics.nested_attr) | Same as</code>getattr<code>, but if</code>attr<code>includes a</code>.<code>, then looks inside nested objects | | [nested_callable](#fastcore.basics.nested_callable) | Same as</code>nested_attr<code>but if not found will return</code>noop<code>| | [nested_idx](#fastcore.basics.nested_idx) | Index into nested collections, dicts, etc, with</code>idxs<code>| | [nested_setdefault](#fastcore.basics.nested_setdefault) | Same as</code>setdefault<code>, but if</code>attr<code>includes a</code>.<code>, then looks inside nested objects | | [not_](#fastcore.basics.not_) | Create new function that negates result of</code>f<code>| | [num_cpus](#fastcore.basics.num_cpus) | Get number of cpus | | [only](#fastcore.basics.only) | Return the only item of</code>o<code>, raise if</code>o<code>doesn't have exactly one item | | [otherwise](#fastcore.basics.otherwise) |</code>y if tst(x) else x<code>| | [partialler](#fastcore.basics.partialler) | Like</code>functools.partial<code>but also copies over docstring | | [patch](#fastcore.basics.patch) | Decorator: add</code>f<code>to the first parameter's class (based on f's type annotations) | | [patch_property](#fastcore.basics.patch_property) | Deprecated; use</code>patch(as_prop=True)<code>instead | | [patch_to](#fastcore.basics.patch_to) | Decorator: add</code>f<code>to</code>cls<code>| | [properties](#fastcore.basics.properties) | Change attrs in</code>cls<code>with names in</code>ps<code>to properties | | [range_of](#fastcore.basics.range_of) | All indices of collection</code>a<code>, if</code>a<code>is a collection, otherwise</code>range<code>| | [renumerate](#fastcore.basics.renumerate) | Same as</code>enumerate<code>, but returns index as 2nd element instead of 1st | | [replicate](#fastcore.basics.replicate) | Create tuple of</code>item<code>copied</code>len(match)<code>times | | [ret_false](#fastcore.basics.ret_false) | Predicate: always</code>False<code>| | [ret_true](#fastcore.basics.ret_true) | Predicate: always</code>True<code>| | [risinstance](#fastcore.basics.risinstance) | Curried</code>isinstance<code>but with args reversed | | [set_nested_idx](#fastcore.basics.set_nested_idx) | Set value indexed like</code>nested_idx</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.setattrs">setattrs</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.setify">setify</a></td>
+<td>Turn any list like-object into a set.</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.signature_ex">signature_ex</a></td>
+<td>Backport of <code>inspect.signature(..., eval_str=True</code> to &lt;py310</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.snake2camel">snake2camel</a></td>
+<td>Convert snake_case to CamelCase</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.sorted_ex">sorted_ex</a></td>
+<td>Like <code>sorted</code>, but if key is str use <code>attrgetter</code>; if int use <code>itemgetter</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.stop">stop</a></td>
+<td>Raises exception <code>e</code> (by default <code>StopException</code>)</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.store_attr">store_attr</a></td>
+<td>Store params named in comma-separated <code>names</code> from calling context into attrs in <code>self</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.str2bool">str2bool</a></td>
+<td>Case-insensitive convert string <code>s</code> too a bool (<code>y</code>,<code>yes</code>,<code>t</code>,<code>true</code>,<code>on</code>,<code>1</code>-&gt;<code>True</code>)</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.str_enum">str_enum</a></td>
+<td>Simplified creation of <code>StrEnum</code> types</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.strcat">strcat</a></td>
+<td>Concatenate stringified items <code>its</code></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.true">true</a></td>
+<td>Test whether <code>x</code> is truthy; collections with &gt;0 elements are considered <code>True</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.try_attrs">try_attrs</a></td>
+<td>Return first attr that exists in <code>obj</code></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.tuplify">tuplify</a></td>
+<td>Make <code>o</code> a tuple</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.type_hints">type_hints</a></td>
+<td>Like <code>typing.get_type_hints</code> but returns <code>{}</code> if not allowed type</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.typed">typed</a></td>
+<td>Decorator to check param and return types at runtime</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.union2tuple">union2tuple</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.uniqueify">uniqueify</a></td>
+<td>Unique elements in <code>x</code>, optional <code>sort</code>, optional return reverse correspondence, optional prepend with elements.</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.using_attr">using_attr</a></td>
+<td>Construct a function which applies <code>f</code> to the argument’s attribute <code>attr</code></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.val2idx">val2idx</a></td>
+<td>Dict from value to index</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.with_cast">with_cast</a></td>
+<td>Decorator which uses any parameter annotations as preprocessing functions</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.wrap_class">wrap_class</a></td>
+<td>Decorator: makes function a method of a new class <code>nm</code> passing parameters to <code>mk_class</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.zip_cycle">zip_cycle</a></td>
+<td>Like <code>itertools.zip_longest</code> but <code>cycle</code>s through elements of all but first argument</td>
+</tr>
+</tbody>
+</table>
+<section id="fastcore.basics.add_props" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.add_props">add_props</h3>
+<p><code>basics.add_props(f, g=None, n=2)</code></p>
+<p>Create properties passing each of <code>range(n)</code> to f</p>
+</section>
+<section id="fastcore.basics.anno_ret" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.anno_ret">anno_ret</h3>
+<p><code>basics.anno_ret(func)</code></p>
+<p>Get the return annotation of <code>func</code></p>
+</section>
+<section id="fastcore.basics.annotations" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.annotations">annotations</h3>
+<p><code>basics.annotations(o)</code></p>
+<p>Annotations for <code>o</code>, or <code>type(o)</code></p>
+</section>
+<section id="fastcore.basics.argnames" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.argnames">argnames</h3>
+<p><code>basics.argnames(f, frame=False)</code></p>
+<p>Names of arguments to function or frame <code>f</code></p>
+</section>
+<section id="fastcore.basics.argwhere" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.argwhere">argwhere</h3>
+<p><code>basics.argwhere(iterable, f, negate=False, **kwargs)</code></p>
+<p>Like <code>filter_ex</code>, but return indices for matching items</p>
+</section>
+<section id="fastcore.basics.attrdict" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.attrdict">attrdict</h3>
+<p><code>basics.attrdict(o, *ks, default=None)</code></p>
+<p>Dict from each <code>k</code> in <code>ks</code> to <code>getattr(o,k)</code></p>
+</section>
+<section id="fastcore.basics.basic_repr" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.basic_repr">basic_repr</h3>
+<p><code>basics.basic_repr(flds=None)</code></p>
+<p>Minimal <code>__repr__</code></p>
+</section>
+<section id="fastcore.basics.camel2snake" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.camel2snake">camel2snake</h3>
+<p><code>basics.camel2snake(name)</code></p>
+<p>Convert CamelCase to snake_case</p>
+</section>
+<section id="fastcore.basics.camel2words" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.camel2words">camel2words</h3>
+<p><code>basics.camel2words(s, space=' ')</code></p>
+<p>Convert CamelCase to ‘spaced words’</p>
+</section>
+<section id="fastcore.basics.chunked" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.chunked">chunked</h3>
+<p><code>basics.chunked(it, chunk_sz=None, drop_last=False, n_chunks=None)</code></p>
+<p>Return batches from iterator <code>it</code> of size <code>chunk_sz</code> (or return <code>n_chunks</code> total)</p>
+</section>
+<section id="fastcore.basics.class2attr" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.class2attr">class2attr</h3>
+<p><code>basics.class2attr(self, cls_name)</code></p>
+<p>Return the snake-cased name of the class; strip ending <code>cls_name</code> if it exists.</p>
+</section>
+<section id="fastcore.basics.compile_re" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.compile_re">compile_re</h3>
+<p><code>basics.compile_re(pat)</code></p>
+<p>Compile <code>pat</code> if it’s not None</p>
+</section>
+<section id="fastcore.basics.compose" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.compose">compose</h3>
+<p><code>basics.compose(*funcs, order=None)</code></p>
+<p>Create a function that composes all functions in <code>funcs</code>, passing along remaining <code>*args</code> and <code>**kwargs</code> to all</p>
+</section>
+<section id="fastcore.basics.concat" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.concat">concat</h3>
+<p><code>basics.concat(colls)</code></p>
+<p>Concatenate all collections and items as a list</p>
+</section>
+<section id="fastcore.basics.copy_func" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.copy_func">copy_func</h3>
+<p><code>basics.copy_func(f)</code></p>
+<p>Copy a non-builtin function (NB <code>copy.copy</code> does not work for this)</p>
+</section>
+<section id="fastcore.basics.custom_dir" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.custom_dir">custom_dir</h3>
+<p><code>basics.custom_dir(c, add)</code></p>
+<p>Implement custom <code>__dir__</code>, adding <code>add</code> to <code>cls</code></p>
+</section>
+<section id="fastcore.basics.cycle" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.cycle">cycle</h3>
+<p><code>basics.cycle(o)</code></p>
+<p>Like <code>itertools.cycle</code> except creates list of <code>None</code>s if <code>o</code> is empty</p>
+</section>
+<section id="fastcore.basics.delegate_attr" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.delegate_attr">delegate_attr</h3>
+<p><code>basics.delegate_attr(self, k, to)</code></p>
+<p>Use in <code>__getattr__</code> to delegate to attr <code>to</code> without inheriting from <code>GetAttr</code></p>
+</section>
+<section id="fastcore.basics.detuplify" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.detuplify">detuplify</h3>
+<p><code>basics.detuplify(x)</code></p>
+<p>If <code>x</code> is a tuple with one thing, extract it</p>
+</section>
+<section id="fastcore.basics.eval_type" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.eval_type">eval_type</h3>
+<p><code>basics.eval_type(t, glb, loc)</code></p>
+<p><code>eval</code> a type or collection of types, if needed, for annotations in py3.10+</p>
+</section>
+<section id="fastcore.basics.even_mults" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.even_mults">even_mults</h3>
+<p><code>basics.even_mults(start, stop, n)</code></p>
+<p>Build log-stepped array from <code>start</code> to <code>stop</code> in <code>n</code> steps.</p>
+</section>
+<section id="fastcore.basics.exec_import" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.exec_import">exec_import</h3>
+<p><code>basics.exec_import(mod, sym)</code></p>
+<p>Import <code>sym</code> from <code>mod</code> in a new environment</p>
+</section>
+<section id="fastcore.basics.exec_local" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.exec_local">exec_local</h3>
+<p><code>basics.exec_local(code, var_name)</code></p>
+<p>Call <code>exec</code> on <code>code</code> and return the var `var_name</p>
+</section>
+<section id="fastcore.basics.exec_new" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.exec_new">exec_new</h3>
+<p><code>basics.exec_new(code)</code></p>
+<p>Execute <code>code</code> in a new environment and return it</p>
+</section>
+<section id="fastcore.basics.filter_dict" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.filter_dict">filter_dict</h3>
+<p><code>basics.filter_dict(d, func)</code></p>
+<p>Filter a <code>dict</code> using <code>func</code>, applied to keys and values</p>
+</section>
+<section id="fastcore.basics.filter_ex" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.filter_ex">filter_ex</h3>
+<p><code>basics.filter_ex(iterable, f=noop, negate=False, gen=False, **kwargs)</code></p>
+<p>Like <code>filter</code>, but passing <code>kwargs</code> to <code>f</code>, defaulting <code>f</code> to <code>noop</code>, and adding <code>negate</code> and <code>gen</code></p>
+</section>
+<section id="fastcore.basics.filter_keys" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.filter_keys">filter_keys</h3>
+<p><code>basics.filter_keys(d, func)</code></p>
+<p>Filter a <code>dict</code> using <code>func</code>, applied to keys</p>
+</section>
+<section id="fastcore.basics.filter_values" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.filter_values">filter_values</h3>
+<p><code>basics.filter_values(d, func)</code></p>
+<p>Filter a <code>dict</code> using <code>func</code>, applied to values</p>
+</section>
+<section id="fastcore.basics.first" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.first">first</h3>
+<p><code>basics.first(x, f=None, negate=False, **kwargs)</code></p>
+<p>First element of <code>x</code>, optionally filtered by <code>f</code>, or None if missing</p>
+</section>
+<section id="fastcore.basics.flatten" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.flatten">flatten</h3>
+<p><code>basics.flatten(o)</code></p>
+<p>Concatenate all collections and items as a generator</p>
+</section>
+<section id="fastcore.basics.gen" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.gen">gen</h3>
+<p><code>basics.gen(func, seq, cond=ret_true)</code></p>
+<p>Like <code>(func(o) for o in seq if cond(func(o)))</code> but handles <code>StopIteration</code></p>
+</section>
+<section id="fastcore.basics.get_annotations_ex" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.get_annotations_ex">get_annotations_ex</h3>
+<p><code>basics.get_annotations_ex(obj, *, globals=None, locals=None)</code></p>
+<p>Backport of py3.10 <code>get_annotations</code> that returns globals/locals</p>
+</section>
+<section id="fastcore.basics.get_class" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.get_class">get_class</h3>
+<p><code>basics.get_class(nm, *fld_names, sup=None, doc=None, funcs=None, **flds)</code></p>
+<p>Dynamically create a class, optionally inheriting from <code>sup</code>, containing <code>fld_names</code></p>
+</section>
+<section id="fastcore.basics.getattrs" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.getattrs">getattrs</h3>
+<p><code>basics.getattrs(o, *attrs, default=None)</code></p>
+<p>List of all <code>attrs</code> in <code>o</code></p>
+</section>
+<section id="fastcore.basics.getcallable" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.getcallable">getcallable</h3>
+<p><code>basics.getcallable(o, attr)</code></p>
+<p>Calls <code>getattr</code> with a default of <code>noop</code></p>
+</section>
+<section id="fastcore.basics.groupby" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.groupby">groupby</h3>
+<p><code>basics.groupby(x, key, val=noop)</code></p>
+<p>Like <code>itertools.groupby</code> but doesn’t need to be sorted, and isn’t lazy, plus some extensions</p>
+</section>
+<section id="fastcore.basics.hasattrs" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.hasattrs">hasattrs</h3>
+<p><code>basics.hasattrs(o, attrs)</code></p>
+<p>Test whether <code>o</code> contains all <code>attrs</code></p>
+</section>
+<section id="fastcore.basics.ifnone" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.ifnone">ifnone</h3>
+<p><code>basics.ifnone(a, b)</code></p>
+<p><code>b</code> if <code>a</code> is None else <code>a</code></p>
+</section>
+<section id="fastcore.basics.in_" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.in_">in_</h3>
+<p><code>basics.in_(x, a)</code></p>
+<p><code>True</code> if <code>x in a</code></p>
+</section>
+<section id="fastcore.basics.instantiate" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.instantiate">instantiate</h3>
+<p><code>basics.instantiate(t)</code></p>
+<p>Instantiate <code>t</code> if it’s a type, otherwise do nothing</p>
+</section>
+<section id="fastcore.basics.is_array" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.is_array">is_array</h3>
+<p><code>basics.is_array(x)</code></p>
+<p><code>True</code> if <code>x</code> supports <code>__array__</code> or <code>iloc</code></p>
+</section>
+<section id="fastcore.basics.last_index" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.last_index">last_index</h3>
+<p><code>basics.last_index(x, o)</code></p>
+<p>Finds the last index of occurence of <code>x</code> in <code>o</code> (returns -1 if no occurence)</p>
+</section>
+<section id="fastcore.basics.listify" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.listify">listify</h3>
+<p><code>basics.listify(o=None, *rest, use_list=False, match=None)</code></p>
+<p>Convert <code>o</code> to a <code>list</code></p>
+</section>
+<section id="fastcore.basics.loop_first" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.loop_first">loop_first</h3>
+<p><code>basics.loop_first(values)</code></p>
+<p>Iterate and generate a tuple with a flag for first value.</p>
+</section>
+<section id="fastcore.basics.loop_first_last" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.loop_first_last">loop_first_last</h3>
+<p><code>basics.loop_first_last(values)</code></p>
+<p>Iterate and generate a tuple with a flag for first and last value.</p>
+</section>
+<section id="fastcore.basics.loop_last" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.loop_last">loop_last</h3>
+<p><code>basics.loop_last(values)</code></p>
+<p>Iterate and generate a tuple with a flag for last value.</p>
+</section>
+<section id="fastcore.basics.map_ex" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.map_ex">map_ex</h3>
+<p><code>basics.map_ex(iterable, f, *args, gen=False, **kwargs)</code></p>
+<p>Like <code>map</code>, but use <code>bind</code>, and supports <code>str</code> and indexing</p>
+</section>
+<section id="fastcore.basics.maps" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.maps">maps</h3>
+<p><code>basics.maps(*args, retain=noop)</code></p>
+<p>Like <code>map</code>, except funcs are composed first</p>
+</section>
+<section id="fastcore.basics.mapt" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.mapt">mapt</h3>
+<p><code>basics.mapt(func, *iterables)</code></p>
+<p>Tuplified <code>map</code></p>
+</section>
+<section id="fastcore.basics.maybe_attr" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.maybe_attr">maybe_attr</h3>
+<p><code>basics.maybe_attr(o, attr)</code></p>
+<p><code>getattr(o,attr,o)</code></p>
+</section>
+<section id="fastcore.basics.merge" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.merge">merge</h3>
+<p><code>basics.merge(*ds)</code></p>
+<p>Merge all dictionaries in <code>ds</code></p>
+</section>
+<section id="fastcore.basics.mk_class" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.mk_class">mk_class</h3>
+<p><code>basics.mk_class(nm, *fld_names, sup=None, doc=None, funcs=None, mod=None, **flds)</code></p>
+<p>Create a class using <code>get_class</code> and add to the caller’s module</p>
+</section>
+<section id="fastcore.basics.nested_attr" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.nested_attr">nested_attr</h3>
+<p><code>basics.nested_attr(o, attr, default=None)</code></p>
+<p>Same as <code>getattr</code>, but if <code>attr</code> includes a <code>.</code>, then looks inside nested objects</p>
+</section>
+<section id="fastcore.basics.nested_callable" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.nested_callable">nested_callable</h3>
+<p><code>basics.nested_callable(o, attr)</code></p>
+<p>Same as <code>nested_attr</code> but if not found will return <code>noop</code></p>
+</section>
+<section id="fastcore.basics.nested_idx" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.nested_idx">nested_idx</h3>
+<p><code>basics.nested_idx(coll, *idxs)</code></p>
+<p>Index into nested collections, dicts, etc, with <code>idxs</code></p>
+</section>
+<section id="fastcore.basics.nested_setdefault" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.nested_setdefault">nested_setdefault</h3>
+<p><code>basics.nested_setdefault(o, attr, default)</code></p>
+<p>Same as <code>setdefault</code>, but if <code>attr</code> includes a <code>.</code>, then looks inside nested objects</p>
+</section>
+<section id="fastcore.basics.not_" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.not_">not_</h3>
+<p><code>basics.not_(f)</code></p>
+<p>Create new function that negates result of <code>f</code></p>
+</section>
+<section id="fastcore.basics.num_cpus" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.num_cpus">num_cpus</h3>
+<p><code>basics.num_cpus()</code></p>
+<p>Get number of cpus</p>
+</section>
+<section id="fastcore.basics.only" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.only">only</h3>
+<p><code>basics.only(o)</code></p>
+<p>Return the only item of <code>o</code>, raise if <code>o</code> doesn’t have exactly one item</p>
+</section>
+<section id="fastcore.basics.otherwise" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.otherwise">otherwise</h3>
+<p><code>basics.otherwise(x, tst, y)</code></p>
+<p><code>y if tst(x) else x</code></p>
+</section>
+<section id="fastcore.basics.partialler" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.partialler">partialler</h3>
+<p><code>basics.partialler(f, *args, order=None, **kwargs)</code></p>
+<p>Like <code>functools.partial</code> but also copies over docstring</p>
+</section>
+<section id="fastcore.basics.patch" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.patch">patch</h3>
+<p><code>basics.patch(f=None, *, as_prop=False, cls_method=False)</code></p>
+<p>Decorator: add <code>f</code> to the first parameter’s class (based on f’s type annotations)</p>
+</section>
+<section id="fastcore.basics.patch_property" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.patch_property">patch_property</h3>
+<p><code>basics.patch_property(f)</code></p>
+<p>Deprecated; use <code>patch(as_prop=True)</code> instead</p>
+</section>
+<section id="fastcore.basics.patch_to" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.patch_to">patch_to</h3>
+<p><code>basics.patch_to(cls, as_prop=False, cls_method=False)</code></p>
+<p>Decorator: add <code>f</code> to <code>cls</code></p>
+</section>
+<section id="fastcore.basics.properties" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.properties">properties</h3>
+<p><code>basics.properties(cls, *ps)</code></p>
+<p>Change attrs in <code>cls</code> with names in <code>ps</code> to properties</p>
+</section>
+<section id="fastcore.basics.range_of" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.range_of">range_of</h3>
+<p><code>basics.range_of(a, b=None, step=None)</code></p>
+<p>All indices of collection <code>a</code>, if <code>a</code> is a collection, otherwise <code>range</code></p>
+</section>
+<section id="fastcore.basics.renumerate" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.renumerate">renumerate</h3>
+<p><code>basics.renumerate(iterable, start=0)</code></p>
+<p>Same as <code>enumerate</code>, but returns index as 2nd element instead of 1st</p>
+</section>
+<section id="fastcore.basics.replicate" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.replicate">replicate</h3>
+<p><code>basics.replicate(item, match)</code></p>
+<p>Create tuple of <code>item</code> copied <code>len(match)</code> times</p>
+</section>
+<section id="fastcore.basics.ret_false" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.ret_false">ret_false</h3>
+<p><code>basics.ret_false(*args, **kwargs)</code></p>
+<p>Predicate: always <code>False</code></p>
+</section>
+<section id="fastcore.basics.ret_true" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.ret_true">ret_true</h3>
+<p><code>basics.ret_true(*args, **kwargs)</code></p>
+<p>Predicate: always <code>True</code></p>
+</section>
+<section id="fastcore.basics.risinstance" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.risinstance">risinstance</h3>
+<p><code>basics.risinstance(types, obj=None)</code></p>
+<p>Curried <code>isinstance</code> but with args reversed</p>
+</section>
+<section id="fastcore.basics.set_nested_idx" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.set_nested_idx">set_nested_idx</h3>
+<p><code>basics.set_nested_idx(coll, value, *idxs)</code></p>
+<p>Set value indexed like `nested_idx</p>
+</section>
+<section id="fastcore.basics.setattrs" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.setattrs">setattrs</h3>
+<p><code>basics.setattrs(dest, flds, src)</code></p>
+</section>
+<section id="fastcore.basics.setify" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.setify">setify</h3>
+<p><code>basics.setify(o)</code></p>
+<p>Turn any list like-object into a set.</p>
+</section>
+<section id="fastcore.basics.signature_ex" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.signature_ex">signature_ex</h3>
+<p><code>basics.signature_ex(obj, eval_str=False)</code></p>
+<p>Backport of <code>inspect.signature(..., eval_str=True</code> to &lt;py310</p>
+</section>
+<section id="fastcore.basics.snake2camel" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.snake2camel">snake2camel</h3>
+<p><code>basics.snake2camel(s)</code></p>
+<p>Convert snake_case to CamelCase</p>
+</section>
+<section id="fastcore.basics.sorted_ex" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.sorted_ex">sorted_ex</h3>
+<p><code>basics.sorted_ex(iterable, key=None, reverse=False)</code></p>
+<p>Like <code>sorted</code>, but if key is str use <code>attrgetter</code>; if int use <code>itemgetter</code></p>
+</section>
+<section id="fastcore.basics.stop" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.stop">stop</h3>
+<p><code>basics.stop(e=StopIteration)</code></p>
+<p>Raises exception <code>e</code> (by default <code>StopException</code>)</p>
+</section>
+<section id="fastcore.basics.store_attr" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.store_attr">store_attr</h3>
+<p><code>basics.store_attr(names=None, self=None, but='', cast=False, store_args=None, **attrs)</code></p>
+<p>Store params named in comma-separated <code>names</code> from calling context into attrs in <code>self</code></p>
+</section>
+<section id="fastcore.basics.str2bool" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.str2bool">str2bool</h3>
+<p><code>basics.str2bool(s)</code></p>
+<p>Case-insensitive convert string <code>s</code> too a bool (<code>y</code>,<code>yes</code>,<code>t</code>,<code>true</code>,<code>on</code>,<code>1</code>-&gt;<code>True</code>)</p>
+</section>
+<section id="fastcore.basics.str_enum" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.str_enum">str_enum</h3>
+<p><code>basics.str_enum(name, *vals)</code></p>
+<p>Simplified creation of <code>StrEnum</code> types</p>
+</section>
+<section id="fastcore.basics.strcat" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.strcat">strcat</h3>
+<p><code>basics.strcat(its, sep='')</code></p>
+<p>Concatenate stringified items <code>its</code></p>
+</section>
+<section id="fastcore.basics.true" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.true">true</h3>
+<p><code>basics.true(x)</code></p>
+<p>Test whether <code>x</code> is truthy; collections with &gt;0 elements are considered <code>True</code></p>
+</section>
+<section id="fastcore.basics.try_attrs" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.try_attrs">try_attrs</h3>
+<p><code>basics.try_attrs(obj, *attrs)</code></p>
+<p>Return first attr that exists in <code>obj</code></p>
+</section>
+<section id="fastcore.basics.tuplify" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.tuplify">tuplify</h3>
+<p><code>basics.tuplify(o, use_list=False, match=None)</code></p>
+<p>Make <code>o</code> a tuple</p>
+</section>
+<section id="fastcore.basics.type_hints" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.type_hints">type_hints</h3>
+<p><code>basics.type_hints(f)</code></p>
+<p>Like <code>typing.get_type_hints</code> but returns <code>{}</code> if not allowed type</p>
+</section>
+<section id="fastcore.basics.typed" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.typed">typed</h3>
+<p><code>basics.typed(f)</code></p>
+<p>Decorator to check param and return types at runtime</p>
+</section>
+<section id="fastcore.basics.union2tuple" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.union2tuple">union2tuple</h3>
+<p><code>basics.union2tuple(t)</code></p>
+</section>
+<section id="fastcore.basics.uniqueify" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.uniqueify">uniqueify</h3>
+<p><code>basics.uniqueify(x, sort=False, bidir=False, start=None)</code></p>
+<p>Unique elements in <code>x</code>, optional <code>sort</code>, optional return reverse correspondence, optional prepend with elements.</p>
+</section>
+<section id="fastcore.basics.using_attr" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.using_attr">using_attr</h3>
+<p><code>basics.using_attr(f, attr)</code></p>
+<p>Construct a function which applies <code>f</code> to the argument’s attribute <code>attr</code></p>
+</section>
+<section id="fastcore.basics.val2idx" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.val2idx">val2idx</h3>
+<p><code>basics.val2idx(x)</code></p>
+<p>Dict from value to index</p>
+</section>
+<section id="fastcore.basics.with_cast" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.with_cast">with_cast</h3>
+<p><code>basics.with_cast(f)</code></p>
+<p>Decorator which uses any parameter annotations as preprocessing functions</p>
+</section>
+<section id="fastcore.basics.wrap_class" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.wrap_class">wrap_class</h3>
+<p><code>basics.wrap_class(nm, *fld_names, sup=None, doc=None, funcs=None, **flds)</code></p>
+<p>Decorator: makes function a method of a new class <code>nm</code> passing parameters to <code>mk_class</code></p>
+</section>
+<section id="fastcore.basics.zip_cycle" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.zip_cycle">zip_cycle</h3>
+<p><code>basics.zip_cycle(x, *args)</code></p>
+<p>Like <code>itertools.zip_longest</code> but <code>cycle</code>s through elements of all but first argument</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
