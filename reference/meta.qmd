@@ -1,0 +1,64 @@
+# meta { #fastcore.meta }
+
+`meta`
+
+## Functions
+
+| Name | Description |
+| --- | --- |
+| [anno_dict](#fastcore.meta.anno_dict) | `__annotation__ dictionary with `empty` cast to `None`, returning empty if doesn't exist |
+| [delegates](#fastcore.meta.delegates) | Decorator: replace `**kwargs` in signature with params from `to` |
+| [empty2none](#fastcore.meta.empty2none) | Replace `Parameter.empty` with `None` |
+| [funcs_kwargs](#fastcore.meta.funcs_kwargs) | Replace methods in `cls._methods` with those from `kwargs` |
+| [method](#fastcore.meta.method) | Mark `f` as a method |
+| [test_sig](#fastcore.meta.test_sig) | Test the signature of an object |
+| [use_kwargs](#fastcore.meta.use_kwargs) | Decorator: replace `**kwargs` in signature with `names` params |
+| [use_kwargs_dict](#fastcore.meta.use_kwargs_dict) | Decorator: replace `**kwargs` in signature with `names` params |
+
+### anno_dict { #fastcore.meta.anno_dict }
+
+`meta.anno_dict(f)`
+
+`__annotation__ dictionary with `empty` cast to `None`, returning empty if doesn't exist
+
+### delegates { #fastcore.meta.delegates }
+
+`meta.delegates(to=None, keep=False, but=None)`
+
+Decorator: replace `**kwargs` in signature with params from `to`
+
+### empty2none { #fastcore.meta.empty2none }
+
+`meta.empty2none(p)`
+
+Replace `Parameter.empty` with `None`
+
+### funcs_kwargs { #fastcore.meta.funcs_kwargs }
+
+`meta.funcs_kwargs(as_method=False)`
+
+Replace methods in `cls._methods` with those from `kwargs`
+
+### method { #fastcore.meta.method }
+
+`meta.method(f)`
+
+Mark `f` as a method
+
+### test_sig { #fastcore.meta.test_sig }
+
+`meta.test_sig(f, b)`
+
+Test the signature of an object
+
+### use_kwargs { #fastcore.meta.use_kwargs }
+
+`meta.use_kwargs(names, keep=False)`
+
+Decorator: replace `**kwargs` in signature with `names` params
+
+### use_kwargs_dict { #fastcore.meta.use_kwargs_dict }
+
+`meta.use_kwargs_dict(keep=False, **kwargs)`
+
+Decorator: replace `**kwargs` in signature with `names` params

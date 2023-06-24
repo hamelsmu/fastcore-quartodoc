@@ -1,0 +1,30 @@
+# docscrape { #fastcore.docscrape }
+
+`docscrape`
+
+Parse numpy-style docstrings
+
+## Attributes
+
+| Name | Description |
+| --- | --- |
+| [Parameter](#fastcore.docscrape.Parameter) |  |
+
+## Functions
+
+| Name | Description |
+| --- | --- |
+| [dedent_lines](#fastcore.docscrape.dedent_lines) | Deindent a list of lines maximally |
+| [strip_blank_lines](#fastcore.docscrape.strip_blank_lines) | Remove leading and trailing blank lines from a list of lines |
+
+### dedent_lines { #fastcore.docscrape.dedent_lines }
+
+`docscrape.dedent_lines(lines, split=True)`
+
+Deindent a list of lines maximally
+
+### strip_blank_lines { #fastcore.docscrape.strip_blank_lines }
+
+`docscrape.strip_blank_lines(l)`
+
+Remove leading and trailing blank lines from a list of lines

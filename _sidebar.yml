@@ -1,0 +1,15 @@
+website:
+  sidebar:
+  - contents:
+    - reference/index.qmd
+    - contents:
+      - reference/basics.qmd
+      - reference/meta.qmd
+      - reference/utils.qmd
+      section: General utilities
+    - contents:
+      - reference/docments.qmd
+      - reference/docscrape.qmd
+      section: Documentation utilities
+    id: reference
+  - id: dummy-sidebar

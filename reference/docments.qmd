@@ -1,0 +1,70 @@
+# docments { #fastcore.docments }
+
+`docments`
+
+## Attributes
+
+| Name | Description |
+| --- | --- |
+| [empty](#fastcore.docments.empty) |  |
+
+## Functions
+
+| Name | Description |
+| --- | --- |
+| [docments](#fastcore.docments.docments) | Generates a `docment` |
+| [docstring](#fastcore.docments.docstring) | Get docstring for `sym` for functions ad classes |
+| [get_dataclass_source](#fastcore.docments.get_dataclass_source) | Get source code for dataclass `s` |
+| [get_name](#fastcore.docments.get_name) | Get the name of `obj` |
+| [get_source](#fastcore.docments.get_source) | Get source code for string, function object or dataclass `s` |
+| [isdataclass](#fastcore.docments.isdataclass) | Check if `s` is a dataclass but not a dataclass' instance |
+| [parse_docstring](#fastcore.docments.parse_docstring) | Parse a numpy-style docstring in `sym` |
+| [qual_name](#fastcore.docments.qual_name) | Get the qualified name of `obj` |
+
+### docments { #fastcore.docments.docments }
+
+`docments.docments(elt, full=False, **kwargs)`
+
+Generates a `docment`
+
+### docstring { #fastcore.docments.docstring }
+
+`docments.docstring(sym)`
+
+Get docstring for `sym` for functions ad classes
+
+### get_dataclass_source { #fastcore.docments.get_dataclass_source }
+
+`docments.get_dataclass_source(s)`
+
+Get source code for dataclass `s`
+
+### get_name { #fastcore.docments.get_name }
+
+`docments.get_name(obj)`
+
+Get the name of `obj`
+
+### get_source { #fastcore.docments.get_source }
+
+`docments.get_source(s)`
+
+Get source code for string, function object or dataclass `s`
+
+### isdataclass { #fastcore.docments.isdataclass }
+
+`docments.isdataclass(s)`
+
+Check if `s` is a dataclass but not a dataclass' instance
+
+### parse_docstring { #fastcore.docments.parse_docstring }
+
+`docments.parse_docstring(sym)`
+
+Parse a numpy-style docstring in `sym`
+
+### qual_name { #fastcore.docments.qual_name }
+
+`docments.qual_name(obj)`
+
+Get the qualified name of `obj`

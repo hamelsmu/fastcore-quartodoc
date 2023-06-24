@@ -1,0 +1,20 @@
+# Function reference
+
+## General utilities
+
+General purpose utilities.
+
+| | |
+| --- | --- |
+| [basics](basics.qmd#fastcore.basics) |  |
+| [meta](meta.qmd#fastcore.meta) |  |
+| [utils](utils.qmd#fastcore.utils) |  |
+
+## Documentation utilities
+
+Utilities for documentation.
+
+| | |
+| --- | --- |
+| [docments](docments.qmd#fastcore.docments) |  |
+| [docscrape](docscrape.qmd#fastcore.docscrape) | Parse numpy-style docstrings |
