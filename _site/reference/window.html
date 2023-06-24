@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>. – index</title>
+<title>. – window</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -100,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/index.html">Function reference</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/tracing.html">Documentation utilities</a></li><li class="breadcrumb-item"><a href="../reference/window.html">window</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -114,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../reference/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Function reference</span></a>
   </div>
 </li>
@@ -164,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/window.html" class="sidebar-item-text sidebar-link">
+  <a href="../reference/window.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">window</span></a>
   </div>
 </li>
@@ -186,10 +186,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#function-reference" id="toc-function-reference" class="nav-link active" data-scroll-target="#function-reference">Function reference</a>
+  <li><a href="#bytewax.window" id="toc-bytewax.window" class="nav-link active" data-scroll-target="#bytewax.window">window</a>
   <ul class="collapse">
-  <li><a href="#general-utilities" id="toc-general-utilities" class="nav-link" data-scroll-target="#general-utilities">General utilities</a></li>
-  <li><a href="#documentation-utilities" id="toc-documentation-utilities" class="nav-link" data-scroll-target="#documentation-utilities">Documentation utilities</a></li>
+  <li><a href="#use" id="toc-use" class="nav-link" data-scroll-target="#use">Use</a></li>
+  <li><a href="#order" id="toc-order" class="nav-link" data-scroll-target="#order">Order</a></li>
+  <li><a href="#recovery" id="toc-recovery" class="nav-link" data-scroll-target="#recovery">Recovery</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -199,47 +200,28 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="function-reference" class="level1">
-<h1>Function reference</h1>
-<section id="general-utilities" class="level2">
-<h2 class="anchored" data-anchor-id="general-utilities">General utilities</h2>
-<p>General purpose utilities.</p>
-<table class="table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/outputs.html#bytewax.outputs">outputs</a></td>
-<td>Low-level output interfaces.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/recovery.html#bytewax.recovery">recovery</a></td>
-<td>Recovering from failures.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/testing.html#bytewax.testing">testing</a></td>
-<td>Helper tools for testing dataflows.</td>
-</tr>
-</tbody>
-</table>
+<section id="bytewax.window" class="level1">
+<h1>window</h1>
+<p><code>window</code></p>
+<section id="use" class="level2">
+<h2 class="anchored" data-anchor-id="use">Use</h2>
+<ol type="1">
+<li><p>Pick a clock and create a config for it. A <strong>clock</strong> determines the time of each element and the current time used for closing each window. E.g. use the current system time. See the docs for each subclass of <code>ClockConfig</code> for options.</p></li>
+<li><p>Pick a windower and create a config for it. A <strong>windower</strong> defines how to take the values and their times and bucket them into windows. E.g. have tumbling windows every 30 seconds. See the docs for each subclass of <code>WindowConfig</code> for options.</p></li>
+<li><p>Pick a <strong>key</strong> to route the values for the window and make sure the input to the windowing operator you choose is a 2-tuple of <code>(key: str, value)</code>. Windows are managed independently for each key. If you need all data to be processed into the same window state, you can use a constant key like <code>("ALL", value)</code> but this will reduce the parallelism possible in the dataflow. This is similar to all the other stateful operators, so you can read more on their methods on <code>bytewax.Dataflow</code>.</p></li>
+<li><p>Pass both these configs to the windowing operator of your choice. The <strong>windowing operators</strong> decide what kind of logic you should apply to values within a window and what should be the output of the window. E.g. <code>bytewax.Dataflow.reduce_window</code> combines all values in a window into a single output and sends that downstream.</p></li>
+</ol>
+<p>You are allowed and encouraged to have as many different clocks and windowers as you need in a single dataflow. Just instantiate more of them and pass the ones you need for each situation to each windowing operator.</p>
 </section>
-<section id="documentation-utilities" class="level2">
-<h2 class="anchored" data-anchor-id="documentation-utilities">Documentation utilities</h2>
-<p>Utilities for documentation.</p>
-<table class="table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/tracing.html#bytewax.tracing">tracing</a></td>
-<td>Tracing and logging in bytewax are handled in the rust side,</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/window.html#bytewax.window">window</a></td>
-<td>Time-based windows.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/inputs.html#bytewax.inputs">inputs</a></td>
-<td>Low-level input interfaces.</td>
-</tr>
-</tbody>
-</table>
+<section id="order" class="level2">
+<h2 class="anchored" data-anchor-id="order">Order</h2>
+<p>Because Bytewax can be run as a distributed system with multiple worker processes and threads all reading relevant data simultaneously, you have to specifically collect and manually sort data that you need to process in strict time order.</p>
+</section>
+<section id="recovery" class="level2">
+<h2 class="anchored" data-anchor-id="recovery">Recovery</h2>
+<p>Bytewax’s windowing system is built on top of its recovery system (see <code>bytewax.recovery</code> for more info), so failure in the middle of a window will be handled as gracefully as possible.</p>
+<p>Some clocks don’t have a single correct answer on what to do during recovery. E.g. if you use <code>SystemClockConfig</code> with 10 minute windows, but then recover on a 15 minute mark, the system will immediately close out the half-completed window stored during recovery. See the docs for each <code>ClockConfig</code> subclass for specific notes on recovery.</p>
+<p>Recovery happens on the granularity of the <em>epochs</em> of the dataflow, not the windows. See <code>bytewax.inputs</code> for more information on ways to adjust epochs.</p>
 
 
 </section>

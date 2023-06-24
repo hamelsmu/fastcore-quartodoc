@@ -21,7 +21,7 @@ metadata-files:
 
 quartodoc:
   # the name used to import the package
-  package: bytewax
+  package: modal
 
   # write sidebar data to this file
   sidebar: _sidebar.yml
@@ -29,18 +29,20 @@ quartodoc:
   sections:
     - title: General utilities
       desc: General purpose utilities.
+      dynamic: true
       contents:
         # the functions being documented in the package.
         # you can refer to anything: class methods, modules, etc..
-        - outputs
-        - recovery
-        - testing
+        - client
+        - config
+        - gpu
     - title: Documentation utilities
       desc: Utilities for documentation.
+      dynamic: true
       contents:
-        - tracing
-        - window
-        - inputs
+        - mount
+        - image
+        - app
 
 
   

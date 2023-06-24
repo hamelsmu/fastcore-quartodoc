@@ -3,13 +3,14 @@ website:
   - contents:
     - reference/index.qmd
     - contents:
-      - reference/basics.qmd
-      - reference/meta.qmd
-      - reference/utils.qmd
+      - reference/outputs.qmd
+      - reference/recovery.qmd
+      - reference/testing.qmd
       section: General utilities
     - contents:
-      - reference/docments.qmd
-      - reference/docscrape.qmd
+      - reference/tracing.qmd
+      - reference/window.qmd
+      - reference/inputs.qmd
       section: Documentation utilities
     id: reference
   - id: dummy-sidebar

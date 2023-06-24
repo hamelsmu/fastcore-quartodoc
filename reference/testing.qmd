@@ -1,0 +1,32 @@
+# testing { #bytewax.testing }
+
+`testing`
+
+Helper tools for testing dataflows.
+
+## Functions
+
+| Name | Description |
+| --- | --- |
+| [poll_next](#bytewax.testing.poll_next) | Repeatedly poll an input source until it returns a value. |
+
+### poll_next { #bytewax.testing.poll_next }
+
+`testing.poll_next(source, timeout=timedelta(seconds=5))`
+
+Repeatedly poll an input source until it returns a value.
+
+You'll want to use this in unit tests of sources when there's some
+non-determinism in how items are read.
+
+Args:
+
+    source: To call `source.next()` on.
+
+Returns:
+
+    The next item found.
+
+Raises:
+
+    TimeoutError: If no item was returned within the timeout.

@@ -6,9 +6,9 @@ General purpose utilities.
 
 | | |
 | --- | --- |
-| [basics](basics.qmd#fastcore.basics) |  |
-| [meta](meta.qmd#fastcore.meta) |  |
-| [utils](utils.qmd#fastcore.utils) |  |
+| [outputs](outputs.qmd#bytewax.outputs) | Low-level output interfaces. |
+| [recovery](recovery.qmd#bytewax.recovery) | Recovering from failures. |
+| [testing](testing.qmd#bytewax.testing) | Helper tools for testing dataflows. |
 
 ## Documentation utilities
 
@@ -16,5 +16,6 @@ Utilities for documentation.
 
 | | |
 | --- | --- |
-| [docments](docments.qmd#fastcore.docments) |  |
-| [docscrape](docscrape.qmd#fastcore.docscrape) | Parse numpy-style docstrings |
+| [tracing](tracing.qmd#bytewax.tracing) | Tracing and logging in bytewax are handled in the rust side, |
+| [window](window.qmd#bytewax.window) | Time-based windows. |
+| [inputs](inputs.qmd#bytewax.inputs) | Low-level input interfaces. |

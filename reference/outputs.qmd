@@ -1,0 +1,10 @@
+# outputs { #bytewax.outputs }
+
+`outputs`
+
+Low-level output interfaces.
+
+If you want pre-built connectors for various external systems, see
+`bytewax.connectors`. That is also a rich source of examples.
+
+Subclass the types here to implement input for your own custom sink.
