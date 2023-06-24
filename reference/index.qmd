@@ -1,21 +1,10 @@
 # Function reference
 
-## General utilities
-
-General purpose utilities.
-
-| | |
-| --- | --- |
-| [outputs](outputs.qmd#bytewax.outputs) | Low-level output interfaces. |
-| [recovery](recovery.qmd#bytewax.recovery) | Recovering from failures. |
-| [testing](testing.qmd#bytewax.testing) | Helper tools for testing dataflows. |
-
 ## Documentation utilities
 
 Utilities for documentation.
 
 | | |
 | --- | --- |
-| [tracing](tracing.qmd#bytewax.tracing) | Tracing and logging in bytewax are handled in the rust side, |
-| [window](window.qmd#bytewax.window) | Time-based windows. |
-| [inputs](inputs.qmd#bytewax.inputs) | Low-level input interfaces. |
+| [functions](functions.qmd#modal.functions) |  |
+| [functions.web_endpoint](functions.web_endpoint.qmd#modal.functions.web_endpoint) |  |

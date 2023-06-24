@@ -1,0 +1,48 @@
+# functions { #modal.functions }
+
+`functions`
+
+## Attributes
+
+| Name | Description |
+| --- | --- |
+| [ATTEMPT_TIMEOUT_GRACE_PERIOD](#modal.functions.ATTEMPT_TIMEOUT_GRACE_PERIOD) |  |
+| [Function](#modal.functions.Function) |  |
+| [FunctionCall](#modal.functions.FunctionCall) |  |
+| [FunctionHandle](#modal.functions.FunctionHandle) |  |
+| [MAP_INVOCATION_CHUNK_SIZE](#modal.functions.MAP_INVOCATION_CHUNK_SIZE) |  |
+| [PartialFunction](#modal.functions.PartialFunction) |  |
+| [asgi_app](#modal.functions.asgi_app) |  |
+| [gather](#modal.functions.gather) |  |
+| [method](#modal.functions.method) |  |
+| [web_endpoint](#modal.functions.web_endpoint) |  |
+| [wsgi_app](#modal.functions.wsgi_app) |  |
+
+## Functions
+
+| Name | Description |
+| --- | --- |
+| [current_input_id](#modal.functions.current_input_id) | Returns the input ID for the currently processed input. |
+| [exc_with_hints](#modal.functions.exc_with_hints) | mdmd:hidden |
+
+### current_input_id { #modal.functions.current_input_id }
+
+`functions.current_input_id()`
+
+Returns the input ID for the currently processed input.
+
+Can only be called from Modal function (i.e. in a container context).
+
+```python
+from modal import current_input_id
+
+@stub.function()
+def process_stuff():
+    print(f"Starting to process {current_input_id()}")
+```
+
+### exc_with_hints { #modal.functions.exc_with_hints }
+
+`functions.exc_with_hints(exc)`
+
+mdmd:hidden

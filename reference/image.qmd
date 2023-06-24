@@ -1,0 +1,10 @@
+# image { #modal.image }
+
+`image`
+
+## Attributes
+
+| Name | Description |
+| --- | --- |
+| [Image](#modal.image.Image) |  |
+| [ImageHandle](#modal.image.ImageHandle) |  |

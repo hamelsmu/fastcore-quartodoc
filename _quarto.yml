@@ -27,22 +27,11 @@ quartodoc:
   sidebar: _sidebar.yml
 
   sections:
-    - title: General utilities
-      desc: General purpose utilities.
-      dynamic: true
-      contents:
-        # the functions being documented in the package.
-        # you can refer to anything: class methods, modules, etc..
-        - client
-        - config
-        - gpu
     - title: Documentation utilities
       desc: Utilities for documentation.
       dynamic: true
       contents:
-        - mount
-        - image
-        - app
-
+        - functions
+        - functions.web_endpoint
 
   

@@ -32,21 +32,21 @@
     "href": "reference/index.html",
     "title": "Function reference",
     "section": "",
-    "text": "General purpose utilities.\n\n\n\noutputs\nLow-level output interfaces.\n\n\nrecovery\nRecovering from failures.\n\n\ntesting\nHelper tools for testing dataflows.\n\n\n\n\n\n\nUtilities for documentation.\n\n\n\ntracing\nTracing and logging in bytewax are handled in the rust side,\n\n\nwindow\nTime-based windows.\n\n\ninputs\nLow-level input interfaces."
+    "text": "Utilities for documentation.\n\n\n\nfunctions\n\n\n\nfunctions.web_endpoint"
   },
   {
     "objectID": "reference/index.html#general-utilities",
     "href": "reference/index.html#general-utilities",
     "title": "Function reference",
     "section": "",
-    "text": "General purpose utilities.\n\n\n\noutputs\nLow-level output interfaces.\n\n\nrecovery\nRecovering from failures.\n\n\ntesting\nHelper tools for testing dataflows."
+    "text": "General purpose utilities.\n\n\n\nclient\n\n\n\nfunctions\n\n\n\ngpu"
   },
   {
     "objectID": "reference/index.html#documentation-utilities",
     "href": "reference/index.html#documentation-utilities",
     "title": "Function reference",
     "section": "",
-    "text": "Utilities for documentation.\n\n\n\ntracing\nTracing and logging in bytewax are handled in the rust side,\n\n\nwindow\nTime-based windows.\n\n\ninputs\nLow-level input interfaces."
+    "text": "Utilities for documentation.\n\n\n\nfunctions\n\n\n\nfunctions.web_endpoint"
   },
   {
     "objectID": "reference/utils.html",
@@ -215,5 +215,194 @@
     "title": "tracing",
     "section": "",
     "text": "tracing\ntracing\nTracing and logging in bytewax are handled in the rust side, to offer a really detailed view of what is happening in your dataflow.\nBy default, bytewax sends all “error” logs to the standard output. This can be configured with the log_level parameter of the setup_tracing function.\nAll the logs emitted by bytewax are structured, and can be used to setup proper tracing for the dataflow. To do that you need to talk to a service that collects and shows data coming from bytewax.\nThere two possibilities out of the box: - Jaeger - Opentelemetry collector\n\nOpenetelemetry Collector\nThe Opentelemetry collector is the recommended choice, since it can talk to a lot of different backends, jaeger included, and you can swap your tracing infrastructure without touching the dataflow configuration, since the dataflow only talks to the collector.\n\n\nJaeger\nBytewax can send traces directly to jaeger, without going through the opentelemetry collector. This makes the setup easier, but it’s less flexible."
+  },
+  {
+    "objectID": "reference/client.html",
+    "href": "reference/client.html",
+    "title": "client",
+    "section": "",
+    "text": "client\n\n\n\n\n\nName\nDescription\n\n\n\n\nCLIENT_CREATE_ATTEMPT_TIMEOUT\n\n\n\nCLIENT_CREATE_TOTAL_TIMEOUT\n\n\n\nClient\n\n\n\nHEARTBEAT_INTERVAL\n\n\n\nHEARTBEAT_TIMEOUT"
+  },
+  {
+    "objectID": "reference/client.html#attributes",
+    "href": "reference/client.html#attributes",
+    "title": "client",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nCLIENT_CREATE_ATTEMPT_TIMEOUT\n\n\n\nCLIENT_CREATE_TOTAL_TIMEOUT\n\n\n\nClient\n\n\n\nHEARTBEAT_INTERVAL\n\n\n\nHEARTBEAT_TIMEOUT"
+  },
+  {
+    "objectID": "reference/config.html",
+    "href": "reference/config.html",
+    "title": "config",
+    "section": "",
+    "text": "config\n\n\nThe .modal.toml file is generally stored in your home directory. It should look like this::\n[default]\ntoken_id = \"ak-12345...\"\ntoken_secret = \"as-12345...\"\nYou can create this file manually, or you can run the modal token set ... command (see below).\n\n\n\nYou can set a token by running the command::\nmodal token set   --token-id &lt;token id&gt;   --token-secret &lt;token secret&gt;\nThis will write the token id and secret to .modal.toml.\nIf the token id or secret is provided as the string - (a single dash), then it will be read in a secret way from stdin instead.\n\n\n\nOther possible configuration options are:\n\nloglevel (in the .toml file) / MODAL_LOGLEVEL (as an env var). Defaults to WARNING. Set this to DEBUG to see a bunch of internal output.\nlogs_timeout (in the .toml file) / MODAL_LOGS_TIMEOUT (as an env var). Defaults to 10. Number of seconds to wait for logs to drain when closing the session, before giving up.\nautomount (in the .toml file) / MODAL_AUTOMOUNT (as an env var). Defaults to True. By default, Modal automatically mounts modules imported in the current scope, that are deemed to be “local”. This can be turned off by setting this to False.\nserver_url (in the .toml file) / MODAL_SERVER_URL (as an env var). Defaults to https://api.modal.com. Not typically meant to be used.\n\n\n\n\nSome “meta-options” are set using environment variables only:\n\nMODAL_CONFIG_PATH lets you override the location of the .toml file, by default ~/.modal.toml.\nMODAL_PROFILE lets you use multiple sections in the .toml file and switch between them. It defaults to “default”.\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nch\n\n\n\nconfig\n\n\n\nlog_level_numeric\n\n\n\nlogger\n\n\n\nuser_config_path\n\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nconfig_profiles\nList the available modal profiles in the .modal.toml file.\n\n\nconfig_set_active_profile\nSet the user’s active modal profile by writing it to the .modal.toml file.\n\n\n\n\n\nconfig.config_profiles()\nList the available modal profiles in the .modal.toml file.\n\n\n\nconfig.config_set_active_profile(env)\nSet the user’s active modal profile by writing it to the .modal.toml file."
+  },
+  {
+    "objectID": "reference/config.html#modal.toml",
+    "href": "reference/config.html#modal.toml",
+    "title": "config",
+    "section": "",
+    "text": "The .modal.toml file is generally stored in your home directory. It should look like this::\n[default]\ntoken_id = \"ak-12345...\"\ntoken_secret = \"as-12345...\"\nYou can create this file manually, or you can run the modal token set ... command (see below)."
+  },
+  {
+    "objectID": "reference/config.html#setting-tokens-using-the-cli",
+    "href": "reference/config.html#setting-tokens-using-the-cli",
+    "title": "config",
+    "section": "",
+    "text": "You can set a token by running the command::\nmodal token set   --token-id &lt;token id&gt;   --token-secret &lt;token secret&gt;\nThis will write the token id and secret to .modal.toml.\nIf the token id or secret is provided as the string - (a single dash), then it will be read in a secret way from stdin instead."
+  },
+  {
+    "objectID": "reference/config.html#other-configuration-options",
+    "href": "reference/config.html#other-configuration-options",
+    "title": "config",
+    "section": "",
+    "text": "Other possible configuration options are:\n\nloglevel (in the .toml file) / MODAL_LOGLEVEL (as an env var). Defaults to WARNING. Set this to DEBUG to see a bunch of internal output.\nlogs_timeout (in the .toml file) / MODAL_LOGS_TIMEOUT (as an env var). Defaults to 10. Number of seconds to wait for logs to drain when closing the session, before giving up.\nautomount (in the .toml file) / MODAL_AUTOMOUNT (as an env var). Defaults to True. By default, Modal automatically mounts modules imported in the current scope, that are deemed to be “local”. This can be turned off by setting this to False.\nserver_url (in the .toml file) / MODAL_SERVER_URL (as an env var). Defaults to https://api.modal.com. Not typically meant to be used."
+  },
+  {
+    "objectID": "reference/config.html#meta-configuration",
+    "href": "reference/config.html#meta-configuration",
+    "title": "config",
+    "section": "",
+    "text": "Some “meta-options” are set using environment variables only:\n\nMODAL_CONFIG_PATH lets you override the location of the .toml file, by default ~/.modal.toml.\nMODAL_PROFILE lets you use multiple sections in the .toml file and switch between them. It defaults to “default”."
+  },
+  {
+    "objectID": "reference/config.html#attributes",
+    "href": "reference/config.html#attributes",
+    "title": "config",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nch\n\n\n\nconfig\n\n\n\nlog_level_numeric\n\n\n\nlogger\n\n\n\nuser_config_path"
+  },
+  {
+    "objectID": "reference/config.html#functions",
+    "href": "reference/config.html#functions",
+    "title": "config",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nconfig_profiles\nList the available modal profiles in the .modal.toml file.\n\n\nconfig_set_active_profile\nSet the user’s active modal profile by writing it to the .modal.toml file.\n\n\n\n\n\nconfig.config_profiles()\nList the available modal profiles in the .modal.toml file.\n\n\n\nconfig.config_set_active_profile(env)\nSet the user’s active modal profile by writing it to the .modal.toml file."
+  },
+  {
+    "objectID": "reference/gpu.html",
+    "href": "reference/gpu.html",
+    "title": "gpu",
+    "section": "",
+    "text": "gpu\n\n\n\n\n\nName\nDescription\n\n\n\n\nGPU_T\n\n\n\nSTRING_TO_GPU_CONFIG\n\n\n\ndisplay_string_to_config\n\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ndisplay_gpu_config\nmdmd:hidden\n\n\nparse_gpu_config\nmdmd:hidden\n\n\n\n\n\ngpu.display_gpu_config(value)\nmdmd:hidden\n\n\n\ngpu.parse_gpu_config(value, raise_on_true=True)\nmdmd:hidden"
+  },
+  {
+    "objectID": "reference/gpu.html#attributes",
+    "href": "reference/gpu.html#attributes",
+    "title": "gpu",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nGPU_T\n\n\n\nSTRING_TO_GPU_CONFIG\n\n\n\ndisplay_string_to_config"
+  },
+  {
+    "objectID": "reference/gpu.html#functions",
+    "href": "reference/gpu.html#functions",
+    "title": "gpu",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\ndisplay_gpu_config\nmdmd:hidden\n\n\nparse_gpu_config\nmdmd:hidden\n\n\n\n\n\ngpu.display_gpu_config(value)\nmdmd:hidden\n\n\n\ngpu.parse_gpu_config(value, raise_on_true=True)\nmdmd:hidden"
+  },
+  {
+    "objectID": "reference/mount.html",
+    "href": "reference/mount.html",
+    "title": "mount",
+    "section": "",
+    "text": "mount\n\n\n\n\n\nName\nDescription\n\n\n\n\nMOUNT_PUT_FILE_CLIENT_TIMEOUT\n\n\n\nMount\n\n\n\nMountHandle\n\n\n\ncreate_client_mount\n\n\n\ncreate_package_mounts\n\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nclient_mount_name\n\n\n\n\n\n\nmount.client_mount_name()"
+  },
+  {
+    "objectID": "reference/mount.html#attributes",
+    "href": "reference/mount.html#attributes",
+    "title": "mount",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nMOUNT_PUT_FILE_CLIENT_TIMEOUT\n\n\n\nMount\n\n\n\nMountHandle\n\n\n\ncreate_client_mount\n\n\n\ncreate_package_mounts"
+  },
+  {
+    "objectID": "reference/mount.html#functions",
+    "href": "reference/mount.html#functions",
+    "title": "mount",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nclient_mount_name\n\n\n\n\n\n\nmount.client_mount_name()"
+  },
+  {
+    "objectID": "reference/image.html",
+    "href": "reference/image.html",
+    "title": "image",
+    "section": "",
+    "text": "image\n\n\n\n\n\nName\nDescription\n\n\n\n\nImage\n\n\n\nImageHandle"
+  },
+  {
+    "objectID": "reference/image.html#attributes",
+    "href": "reference/image.html#attributes",
+    "title": "image",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nImage\n\n\n\nImageHandle"
+  },
+  {
+    "objectID": "reference/app.html",
+    "href": "reference/app.html",
+    "title": "app",
+    "section": "",
+    "text": "app\n\n\n\n\n\nName\nDescription\n\n\n\n\nApp\n\n\n\ncontainer_app\n\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nis_local\nReturns if we are currently on the machine launching/deploying a Modal app\n\n\n\n\n\napp.is_local()\nReturns if we are currently on the machine launching/deploying a Modal app\nReturns True when executed locally on the user’s machine. Returns False when executed from a Modal container in the cloud."
+  },
+  {
+    "objectID": "reference/app.html#attributes",
+    "href": "reference/app.html#attributes",
+    "title": "app",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nApp\n\n\n\ncontainer_app"
+  },
+  {
+    "objectID": "reference/app.html#functions",
+    "href": "reference/app.html#functions",
+    "title": "app",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nis_local\nReturns if we are currently on the machine launching/deploying a Modal app\n\n\n\n\n\napp.is_local()\nReturns if we are currently on the machine launching/deploying a Modal app\nReturns True when executed locally on the user’s machine. Returns False when executed from a Modal container in the cloud."
+  },
+  {
+    "objectID": "reference/functions.html",
+    "href": "reference/functions.html",
+    "title": "functions",
+    "section": "",
+    "text": "functions\n\n\n\n\n\nName\nDescription\n\n\n\n\nATTEMPT_TIMEOUT_GRACE_PERIOD\n\n\n\nFunction\n\n\n\nFunctionCall\n\n\n\nFunctionHandle\n\n\n\nMAP_INVOCATION_CHUNK_SIZE\n\n\n\nPartialFunction\n\n\n\nasgi_app\n\n\n\ngather\n\n\n\nmethod\n\n\n\nweb_endpoint\n\n\n\nwsgi_app\n\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncurrent_input_id\nReturns the input ID for the currently processed input.\n\n\nexc_with_hints\nmdmd:hidden\n\n\n\n\n\nfunctions.current_input_id()\nReturns the input ID for the currently processed input.\nCan only be called from Modal function (i.e. in a container context).\nfrom modal import current_input_id\n\n@stub.function()\ndef process_stuff():\n    print(f\"Starting to process {current_input_id()}\")\n\n\n\nfunctions.exc_with_hints(exc)\nmdmd:hidden"
+  },
+  {
+    "objectID": "reference/functions.html#attributes",
+    "href": "reference/functions.html#attributes",
+    "title": "functions",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nATTEMPT_TIMEOUT_GRACE_PERIOD\n\n\n\nFunction\n\n\n\nFunctionCall\n\n\n\nFunctionHandle\n\n\n\nMAP_INVOCATION_CHUNK_SIZE\n\n\n\nPartialFunction\n\n\n\nasgi_app\n\n\n\ngather\n\n\n\nmethod\n\n\n\nweb_endpoint\n\n\n\nwsgi_app"
+  },
+  {
+    "objectID": "reference/functions.html#functions",
+    "href": "reference/functions.html#functions",
+    "title": "functions",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\ncurrent_input_id\nReturns the input ID for the currently processed input.\n\n\nexc_with_hints\nmdmd:hidden\n\n\n\n\n\nfunctions.current_input_id()\nReturns the input ID for the currently processed input.\nCan only be called from Modal function (i.e. in a container context).\nfrom modal import current_input_id\n\n@stub.function()\ndef process_stuff():\n    print(f\"Starting to process {current_input_id()}\")\n\n\n\nfunctions.exc_with_hints(exc)\nmdmd:hidden"
+  },
+  {
+    "objectID": "reference/web_endpoint.html",
+    "href": "reference/web_endpoint.html",
+    "title": "web_endpoint",
+    "section": "",
+    "text": "web_endpoint\nweb_endpoint"
+  },
+  {
+    "objectID": "reference/method.html",
+    "href": "reference/method.html",
+    "title": "method",
+    "section": "",
+    "text": "method\nmethod"
+  },
+  {
+    "objectID": "reference/functions.web_endpoint.html",
+    "href": "reference/functions.web_endpoint.html",
+    "title": "functions.web_endpoint",
+    "section": "",
+    "text": "functions.web_endpoint\nfunctions.web_endpoint"
+  },
+  {
+    "objectID": "reference/functions.method.html",
+    "href": "reference/functions.method.html",
+    "title": "functions.method",
+    "section": "",
+    "text": "functions.method\nfunctions.method"
   }
 ]

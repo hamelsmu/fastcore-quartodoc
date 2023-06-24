@@ -3,14 +3,8 @@ website:
   - contents:
     - reference/index.qmd
     - contents:
-      - reference/outputs.qmd
-      - reference/recovery.qmd
-      - reference/testing.qmd
-      section: General utilities
-    - contents:
-      - reference/tracing.qmd
-      - reference/window.qmd
-      - reference/inputs.qmd
+      - reference/functions.qmd
+      - reference/functions.web_endpoint.qmd
       section: Documentation utilities
     id: reference
   - id: dummy-sidebar

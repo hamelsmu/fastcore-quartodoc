@@ -1,0 +1,30 @@
+# gpu { #modal.gpu }
+
+`gpu`
+
+## Attributes
+
+| Name | Description |
+| --- | --- |
+| [GPU_T](#modal.gpu.GPU_T) |  |
+| [STRING_TO_GPU_CONFIG](#modal.gpu.STRING_TO_GPU_CONFIG) |  |
+| [display_string_to_config](#modal.gpu.display_string_to_config) |  |
+
+## Functions
+
+| Name | Description |
+| --- | --- |
+| [display_gpu_config](#modal.gpu.display_gpu_config) | mdmd:hidden |
+| [parse_gpu_config](#modal.gpu.parse_gpu_config) | mdmd:hidden |
+
+### display_gpu_config { #modal.gpu.display_gpu_config }
+
+`gpu.display_gpu_config(value)`
+
+mdmd:hidden
+
+### parse_gpu_config { #modal.gpu.parse_gpu_config }
+
+`gpu.parse_gpu_config(value, raise_on_true=True)`
+
+mdmd:hidden

@@ -1,0 +1,13 @@
+# client { #modal.client }
+
+`client`
+
+## Attributes
+
+| Name | Description |
+| --- | --- |
+| [CLIENT_CREATE_ATTEMPT_TIMEOUT](#modal.client.CLIENT_CREATE_ATTEMPT_TIMEOUT) |  |
+| [CLIENT_CREATE_TOTAL_TIMEOUT](#modal.client.CLIENT_CREATE_TOTAL_TIMEOUT) |  |
+| [Client](#modal.client.Client) |  |
+| [HEARTBEAT_INTERVAL](#modal.client.HEARTBEAT_INTERVAL) |  |
+| [HEARTBEAT_TIMEOUT](#modal.client.HEARTBEAT_TIMEOUT) |  |
