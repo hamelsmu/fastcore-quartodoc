@@ -32,7 +32,7 @@
     "href": "reference/index.html",
     "title": "Function reference",
     "section": "",
-    "text": "Utilities for documentation.\n\n\n\nfunctions\n\n\n\nfunctions.web_endpoint"
+    "text": "Utilities for documentation.\n\n\n\nfunctions\n\n\n\nweb_endpoint\nRegister a basic web endpoint with this application."
   },
   {
     "objectID": "reference/index.html#general-utilities",
@@ -46,7 +46,7 @@
     "href": "reference/index.html#documentation-utilities",
     "title": "Function reference",
     "section": "",
-    "text": "Utilities for documentation.\n\n\n\nfunctions\n\n\n\nfunctions.web_endpoint"
+    "text": "Utilities for documentation.\n\n\n\nfunctions\n\n\n\nweb_endpoint\nRegister a basic web endpoint with this application."
   },
   {
     "objectID": "reference/utils.html",
@@ -361,14 +361,14 @@
     "href": "reference/functions.html",
     "title": "functions",
     "section": "",
-    "text": "functions\n\n\n\n\n\nName\nDescription\n\n\n\n\nATTEMPT_TIMEOUT_GRACE_PERIOD\n\n\n\nFunction\n\n\n\nFunctionCall\n\n\n\nFunctionHandle\n\n\n\nMAP_INVOCATION_CHUNK_SIZE\n\n\n\nPartialFunction\n\n\n\nasgi_app\n\n\n\ngather\n\n\n\nmethod\n\n\n\nweb_endpoint\n\n\n\nwsgi_app\n\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncurrent_input_id\nReturns the input ID for the currently processed input.\n\n\nexc_with_hints\nmdmd:hidden\n\n\n\n\n\nfunctions.current_input_id()\nReturns the input ID for the currently processed input.\nCan only be called from Modal function (i.e. in a container context).\nfrom modal import current_input_id\n\n@stub.function()\ndef process_stuff():\n    print(f\"Starting to process {current_input_id()}\")\n\n\n\nfunctions.exc_with_hints(exc)\nmdmd:hidden"
+    "text": "functions\n\n\n\n\n\nName\nDescription\n\n\n\n\nATTEMPT_TIMEOUT_GRACE_PERIOD\n\n\n\nFunction\n\n\n\nFunctionCall\n\n\n\nFunctionHandle\n\n\n\nMAP_INVOCATION_CHUNK_SIZE\n\n\n\nPartialFunction\n\n\n\nasgi_app\n\n\n\ngather\n\n\n\nmethod\n\n\n\nweb_endpoint\nRegister a basic web endpoint with this application.\n\n\nwsgi_app\n\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncurrent_input_id\nReturns the input ID for the currently processed input.\n\n\nexc_with_hints\nmdmd:hidden\n\n\n\n\n\nfunctions.current_input_id()\nReturns the input ID for the currently processed input.\nCan only be called from Modal function (i.e. in a container context).\nfrom modal import current_input_id\n\n@stub.function()\ndef process_stuff():\n    print(f\"Starting to process {current_input_id()}\")\n\n\n\nfunctions.exc_with_hints(exc)\nmdmd:hidden"
   },
   {
     "objectID": "reference/functions.html#attributes",
     "href": "reference/functions.html#attributes",
     "title": "functions",
     "section": "",
-    "text": "Name\nDescription\n\n\n\n\nATTEMPT_TIMEOUT_GRACE_PERIOD\n\n\n\nFunction\n\n\n\nFunctionCall\n\n\n\nFunctionHandle\n\n\n\nMAP_INVOCATION_CHUNK_SIZE\n\n\n\nPartialFunction\n\n\n\nasgi_app\n\n\n\ngather\n\n\n\nmethod\n\n\n\nweb_endpoint\n\n\n\nwsgi_app"
+    "text": "Name\nDescription\n\n\n\n\nATTEMPT_TIMEOUT_GRACE_PERIOD\n\n\n\nFunction\n\n\n\nFunctionCall\n\n\n\nFunctionHandle\n\n\n\nMAP_INVOCATION_CHUNK_SIZE\n\n\n\nPartialFunction\n\n\n\nasgi_app\n\n\n\ngather\n\n\n\nmethod\n\n\n\nweb_endpoint\nRegister a basic web endpoint with this application.\n\n\nwsgi_app"
   },
   {
     "objectID": "reference/functions.html#functions",
@@ -382,7 +382,7 @@
     "href": "reference/web_endpoint.html",
     "title": "web_endpoint",
     "section": "",
-    "text": "web_endpoint\nweb_endpoint"
+    "text": "web_endpoint\nweb_endpoint\nRegister a basic web endpoint with this application.\nThis is the simple way to create a web endpoint on Modal. The function behaves as a FastAPI handler and should return a response object to the caller.\nEndpoints created with @stub.web_endpoint are meant to be simple, single request handlers and automatically have CORS enabled. For more flexibility, use @stub.asgi_app.\nTo learn how to use Modal with popular web frameworks, see the guide on web endpoints.\nAll webhook requests have a 150s maximum request time for the HTTP request itself. However, the underlying functions can run for longer and return results to the caller on completion.\nThe two wait_for_response modes for webhooks are as follows: * wait_for_response=True - tries to fulfill the request on the original URL, but returns a 302 redirect after ~150s to a result URL (original URL with an added __modal_function_id=... query parameter) * wait_for_response=False - immediately returns a 202 ACCEPTED response with a JSON payload: {\"result_url\": \"...\"} containing the result “redirect” URL from above (which in turn redirects to itself every ~150s)"
   },
   {
     "objectID": "reference/method.html",

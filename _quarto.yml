@@ -22,16 +22,16 @@ metadata-files:
 quartodoc:
   # the name used to import the package
   package: modal
-
   # write sidebar data to this file
   sidebar: _sidebar.yml
 
   sections:
     - title: Documentation utilities
       desc: Utilities for documentation.
-      dynamic: true
       contents:
         - functions
-        - functions.web_endpoint
+        - name: web_endpoint
+          contents: [functions.web_endpoint]
+          dynamic: true
 
   

@@ -1,3 +1,24 @@
 # web_endpoint { #modal.web_endpoint }
 
 `web_endpoint`
+
+Register a basic web endpoint with this application.
+
+This is the simple way to create a web endpoint on Modal. The function
+behaves as a [FastAPI](https://fastapi.tiangolo.com/) handler and should
+return a response object to the caller.
+
+Endpoints created with `@stub.web_endpoint` are meant to be simple, single
+request handlers and automatically have
+[CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled.
+For more flexibility, use `@stub.asgi_app`.
+
+To learn how to use Modal with popular web frameworks, see the
+[guide on web endpoints](https://modal.com/docs/guide/webhooks).
+
+All webhook requests have a 150s maximum request time for the HTTP request itself. However, the underlying functions can
+run for longer and return results to the caller on completion.
+
+The two `wait_for_response` modes for webhooks are as follows:
+* `wait_for_response=True` - tries to fulfill the request on the original URL, but returns a 302 redirect after ~150s to a result URL (original URL with an added `__modal_function_id=...` query parameter)
+* `wait_for_response=False` - immediately returns a 202 ACCEPTED response with a JSON payload: `{"result_url": "..."}` containing the result "redirect" URL from above (which in turn redirects to itself every ~150s)

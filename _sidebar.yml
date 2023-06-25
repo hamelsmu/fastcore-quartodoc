@@ -4,7 +4,7 @@ website:
     - reference/index.qmd
     - contents:
       - reference/functions.qmd
-      - reference/functions.web_endpoint.qmd
+      - reference/web_endpoint.qmd
       section: Documentation utilities
     id: reference
   - id: dummy-sidebar

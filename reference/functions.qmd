@@ -15,7 +15,7 @@
 | [asgi_app](#modal.functions.asgi_app) |  |
 | [gather](#modal.functions.gather) |  |
 | [method](#modal.functions.method) |  |
-| [web_endpoint](#modal.functions.web_endpoint) |  |
+| [web_endpoint](#modal.functions.web_endpoint) | Register a basic web endpoint with this application. |
 | [wsgi_app](#modal.functions.wsgi_app) |  |
 
 ## Functions

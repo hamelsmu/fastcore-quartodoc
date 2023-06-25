@@ -7,4 +7,4 @@ Utilities for documentation.
 | | |
 | --- | --- |
 | [functions](functions.qmd#modal.functions) |  |
-| [functions.web_endpoint](functions.web_endpoint.qmd#modal.functions.web_endpoint) |  |
+| [web_endpoint](web_endpoint.qmd#modal.web_endpoint) | Register a basic web endpoint with this application. |
