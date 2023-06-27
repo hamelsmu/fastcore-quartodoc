@@ -89,6 +89,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../reference/index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Function reference</span></a>
+  </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -139,12 +143,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">meta</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/utils.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">utils</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -160,12 +158,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../reference/docments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">docments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/docscrape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">docscrape</span></a>
   </div>
 </li>
       </ul>
@@ -267,6 +259,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#fastcore.basics.str2bool" id="toc-fastcore.basics.str2bool" class="nav-link" data-scroll-target="#fastcore.basics.str2bool">str2bool</a></li>
   <li><a href="#fastcore.basics.str_enum" id="toc-fastcore.basics.str_enum" class="nav-link" data-scroll-target="#fastcore.basics.str_enum">str_enum</a></li>
   <li><a href="#fastcore.basics.strcat" id="toc-fastcore.basics.strcat" class="nav-link" data-scroll-target="#fastcore.basics.strcat">strcat</a></li>
+  <li><a href="#fastcore.basics.tonull" id="toc-fastcore.basics.tonull" class="nav-link" data-scroll-target="#fastcore.basics.tonull">tonull</a></li>
   <li><a href="#fastcore.basics.true" id="toc-fastcore.basics.true" class="nav-link" data-scroll-target="#fastcore.basics.true">true</a></li>
   <li><a href="#fastcore.basics.try_attrs" id="toc-fastcore.basics.try_attrs" class="nav-link" data-scroll-target="#fastcore.basics.try_attrs">try_attrs</a></li>
   <li><a href="#fastcore.basics.tuplify" id="toc-fastcore.basics.tuplify" class="nav-link" data-scroll-target="#fastcore.basics.tuplify">tuplify</a></li>
@@ -335,10 +328,14 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 </tr>
 <tr class="odd">
-<td><a href="#fastcore.basics.num_methods">num_methods</a></td>
+<td><a href="#fastcore.basics.null">null</a></td>
 <td></td>
 </tr>
 <tr class="even">
+<td><a href="#fastcore.basics.num_methods">num_methods</a></td>
+<td></td>
+</tr>
+<tr class="odd">
 <td><a href="#fastcore.basics.rnum_methods">rnum_methods</a></td>
 <td></td>
 </tr>
@@ -445,95 +442,203 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td><a href="#fastcore.basics.exec_local">exec_local</a></td>
-<td>Call <code>exec</code> on <code>code</code> and return the var <code>var_name | | [exec_new](#fastcore.basics.exec_new) | Execute</code>code<code>in a new environment and return it | | [filter_dict](#fastcore.basics.filter_dict) | Filter a</code>dict<code>using</code>func<code>, applied to keys and values | | [filter_ex](#fastcore.basics.filter_ex) | Like</code>filter<code>, but passing</code>kwargs<code>to</code>f<code>, defaulting</code>f<code>to</code>noop<code>, and adding</code>negate<code>and</code>gen<code>| | [filter_keys](#fastcore.basics.filter_keys) | Filter a</code>dict<code>using</code>func<code>, applied to keys | | [filter_values](#fastcore.basics.filter_values) | Filter a</code>dict<code>using</code>func<code>, applied to values | | [first](#fastcore.basics.first) | First element of</code>x<code>, optionally filtered by</code>f<code>, or None if missing | | [flatten](#fastcore.basics.flatten) | Concatenate all collections and items as a generator | | [gen](#fastcore.basics.gen) | Like</code>(func(o) for o in seq if cond(func(o)))<code>but handles</code>StopIteration<code>| | [get_annotations_ex](#fastcore.basics.get_annotations_ex) | Backport of py3.10</code>get_annotations<code>that returns globals/locals | | [get_class](#fastcore.basics.get_class) | Dynamically create a class, optionally inheriting from</code>sup<code>, containing</code>fld_names<code>| | [getattrs](#fastcore.basics.getattrs) | List of all</code>attrs<code>in</code>o<code>| | [getcallable](#fastcore.basics.getcallable) | Calls</code>getattr<code>with a default of</code>noop<code>| | [groupby](#fastcore.basics.groupby) | Like</code>itertools.groupby<code>but doesn't need to be sorted, and isn't lazy, plus some extensions | | [hasattrs](#fastcore.basics.hasattrs) | Test whether</code>o<code>contains all</code>attrs<code>| | [ifnone](#fastcore.basics.ifnone) |</code>b<code>if</code>a<code>is None else</code>a<code>| | [in_](#fastcore.basics.in_) |</code>True<code>if</code>x in a<code>| | [instantiate](#fastcore.basics.instantiate) | Instantiate</code>t<code>if it's a type, otherwise do nothing | | [is_array](#fastcore.basics.is_array) |</code>True<code>if</code>x<code>supports</code><strong>array</strong><code>or</code>iloc<code>| | [last_index](#fastcore.basics.last_index) | Finds the last index of occurence of</code>x<code>in</code>o<code>(returns -1 if no occurence) | | [listify](#fastcore.basics.listify) | Convert</code>o<code>to a</code>list<code>| | [loop_first](#fastcore.basics.loop_first) | Iterate and generate a tuple with a flag for first value. | | [loop_first_last](#fastcore.basics.loop_first_last) | Iterate and generate a tuple with a flag for first and last value. | | [loop_last](#fastcore.basics.loop_last) | Iterate and generate a tuple with a flag for last value. | | [map_ex](#fastcore.basics.map_ex) | Like</code>map<code>, but use</code>bind<code>, and supports</code>str<code>and indexing | | [maps](#fastcore.basics.maps) | Like</code>map<code>, except funcs are composed first | | [mapt](#fastcore.basics.mapt) | Tuplified</code>map<code>| | [maybe_attr](#fastcore.basics.maybe_attr) |</code>getattr(o,attr,o)<code>| | [merge](#fastcore.basics.merge) | Merge all dictionaries in</code>ds<code>| | [mk_class](#fastcore.basics.mk_class) | Create a class using</code>get_class<code>and add to the caller's module | | [nested_attr](#fastcore.basics.nested_attr) | Same as</code>getattr<code>, but if</code>attr<code>includes a</code>.<code>, then looks inside nested objects | | [nested_callable](#fastcore.basics.nested_callable) | Same as</code>nested_attr<code>but if not found will return</code>noop<code>| | [nested_idx](#fastcore.basics.nested_idx) | Index into nested collections, dicts, etc, with</code>idxs<code>| | [nested_setdefault](#fastcore.basics.nested_setdefault) | Same as</code>setdefault<code>, but if</code>attr<code>includes a</code>.<code>, then looks inside nested objects | | [not_](#fastcore.basics.not_) | Create new function that negates result of</code>f<code>| | [num_cpus](#fastcore.basics.num_cpus) | Get number of cpus | | [only](#fastcore.basics.only) | Return the only item of</code>o<code>, raise if</code>o<code>doesn't have exactly one item | | [otherwise](#fastcore.basics.otherwise) |</code>y if tst(x) else x<code>| | [partialler](#fastcore.basics.partialler) | Like</code>functools.partial<code>but also copies over docstring | | [patch](#fastcore.basics.patch) | Decorator: add</code>f<code>to the first parameter's class (based on f's type annotations) | | [patch_property](#fastcore.basics.patch_property) | Deprecated; use</code>patch(as_prop=True)<code>instead | | [patch_to](#fastcore.basics.patch_to) | Decorator: add</code>f<code>to</code>cls<code>| | [properties](#fastcore.basics.properties) | Change attrs in</code>cls<code>with names in</code>ps<code>to properties | | [range_of](#fastcore.basics.range_of) | All indices of collection</code>a<code>, if</code>a<code>is a collection, otherwise</code>range<code>| | [renumerate](#fastcore.basics.renumerate) | Same as</code>enumerate<code>, but returns index as 2nd element instead of 1st | | [replicate](#fastcore.basics.replicate) | Create tuple of</code>item<code>copied</code>len(match)<code>times | | [ret_false](#fastcore.basics.ret_false) | Predicate: always</code>False<code>| | [ret_true](#fastcore.basics.ret_true) | Predicate: always</code>True<code>| | [risinstance](#fastcore.basics.risinstance) | Curried</code>isinstance<code>but with args reversed | | [set_nested_idx](#fastcore.basics.set_nested_idx) | Set value indexed like</code>nested_idx</td>
+<td>Call <code>exec</code> on <code>code</code> and return the var <code>var_name</code></td>
 </tr>
 <tr class="even">
-<td><a href="#fastcore.basics.setattrs">setattrs</a></td>
-<td></td>
+<td><a href="#fastcore.basics.exec_new">exec_new</a></td>
+<td>Execute <code>code</code> in a new environment and return it</td>
 </tr>
 <tr class="odd">
-<td><a href="#fastcore.basics.setify">setify</a></td>
-<td>Turn any list like-object into a set.</td>
+<td><a href="#fastcore.basics.filter_dict">filter_dict</a></td>
+<td>Filter a <code>dict</code> using <code>func</code>, applied to keys and values</td>
 </tr>
 <tr class="even">
-<td><a href="#fastcore.basics.signature_ex">signature_ex</a></td>
-<td>Backport of <code>inspect.signature(..., eval_str=True</code> to &lt;py310</td>
+<td><a href="#fastcore.basics.filter_ex">filter_ex</a></td>
+<td>Like <code>filter</code>, but passing <code>kwargs</code> to <code>f</code>, defaulting <code>f</code> to <code>noop</code>, and adding <code>negate</code> and <code>gen</code></td>
 </tr>
 <tr class="odd">
-<td><a href="#fastcore.basics.snake2camel">snake2camel</a></td>
-<td>Convert snake_case to CamelCase</td>
+<td><a href="#fastcore.basics.filter_keys">filter_keys</a></td>
+<td>Filter a <code>dict</code> using <code>func</code>, applied to keys</td>
 </tr>
 <tr class="even">
-<td><a href="#fastcore.basics.sorted_ex">sorted_ex</a></td>
-<td>Like <code>sorted</code>, but if key is str use <code>attrgetter</code>; if int use <code>itemgetter</code></td>
+<td><a href="#fastcore.basics.filter_values">filter_values</a></td>
+<td>Filter a <code>dict</code> using <code>func</code>, applied to values</td>
 </tr>
 <tr class="odd">
-<td><a href="#fastcore.basics.stop">stop</a></td>
-<td>Raises exception <code>e</code> (by default <code>StopException</code>)</td>
+<td><a href="#fastcore.basics.first">first</a></td>
+<td>First element of <code>x</code>, optionally filtered by <code>f</code>, or None if missing</td>
 </tr>
 <tr class="even">
-<td><a href="#fastcore.basics.store_attr">store_attr</a></td>
-<td>Store params named in comma-separated <code>names</code> from calling context into attrs in <code>self</code></td>
+<td><a href="#fastcore.basics.flatten">flatten</a></td>
+<td>Concatenate all collections and items as a generator</td>
 </tr>
 <tr class="odd">
-<td><a href="#fastcore.basics.str2bool">str2bool</a></td>
-<td>Case-insensitive convert string <code>s</code> too a bool (<code>y</code>,<code>yes</code>,<code>t</code>,<code>true</code>,<code>on</code>,<code>1</code>-&gt;<code>True</code>)</td>
+<td><a href="#fastcore.basics.gen">gen</a></td>
+<td>Like <code>(func(o) for o in seq if cond(func(o)))</code> but handles <code>StopIteration</code></td>
 </tr>
 <tr class="even">
-<td><a href="#fastcore.basics.str_enum">str_enum</a></td>
-<td>Simplified creation of <code>StrEnum</code> types</td>
+<td><a href="#fastcore.basics.get_annotations_ex">get_annotations_ex</a></td>
+<td>Backport of py3.10 <code>get_annotations</code> that returns globals/locals</td>
 </tr>
 <tr class="odd">
-<td><a href="#fastcore.basics.strcat">strcat</a></td>
-<td>Concatenate stringified items <code>its</code></td>
+<td><a href="#fastcore.basics.get_class">get_class</a></td>
+<td>Dynamically create a class, optionally inheriting from <code>sup</code>, containing <code>fld_names</code></td>
 </tr>
 <tr class="even">
-<td><a href="#fastcore.basics.true">true</a></td>
-<td>Test whether <code>x</code> is truthy; collections with &gt;0 elements are considered <code>True</code></td>
+<td><a href="#fastcore.basics.getattrs">getattrs</a></td>
+<td>List of all <code>attrs</code> in <code>o</code></td>
 </tr>
 <tr class="odd">
-<td><a href="#fastcore.basics.try_attrs">try_attrs</a></td>
-<td>Return first attr that exists in <code>obj</code></td>
+<td><a href="#fastcore.basics.getcallable">getcallable</a></td>
+<td>Calls <code>getattr</code> with a default of <code>noop</code></td>
 </tr>
 <tr class="even">
-<td><a href="#fastcore.basics.tuplify">tuplify</a></td>
-<td>Make <code>o</code> a tuple</td>
+<td><a href="#fastcore.basics.groupby">groupby</a></td>
+<td>Like <code>itertools.groupby</code> but doesn’t need to be sorted, and isn’t lazy, plus some extensions</td>
 </tr>
 <tr class="odd">
-<td><a href="#fastcore.basics.type_hints">type_hints</a></td>
-<td>Like <code>typing.get_type_hints</code> but returns <code>{}</code> if not allowed type</td>
+<td><a href="#fastcore.basics.hasattrs">hasattrs</a></td>
+<td>Test whether <code>o</code> contains all <code>attrs</code></td>
 </tr>
 <tr class="even">
-<td><a href="#fastcore.basics.typed">typed</a></td>
-<td>Decorator to check param and return types at runtime</td>
+<td><a href="#fastcore.basics.ifnone">ifnone</a></td>
+<td><code>b</code> if <code>a</code> is None else <code>a</code></td>
 </tr>
 <tr class="odd">
-<td><a href="#fastcore.basics.union2tuple">union2tuple</a></td>
-<td></td>
+<td><a href="#fastcore.basics.in_">in_</a></td>
+<td><code>True</code> if <code>x in a</code></td>
 </tr>
 <tr class="even">
-<td><a href="#fastcore.basics.uniqueify">uniqueify</a></td>
-<td>Unique elements in <code>x</code>, optional <code>sort</code>, optional return reverse correspondence, optional prepend with elements.</td>
+<td><a href="#fastcore.basics.instantiate">instantiate</a></td>
+<td>Instantiate <code>t</code> if it’s a type, otherwise do nothing</td>
 </tr>
 <tr class="odd">
-<td><a href="#fastcore.basics.using_attr">using_attr</a></td>
-<td>Construct a function which applies <code>f</code> to the argument’s attribute <code>attr</code></td>
+<td><a href="#fastcore.basics.is_array">is_array</a></td>
+<td><code>True</code> if <code>x</code> supports <code>__array__</code> or <code>iloc</code></td>
 </tr>
 <tr class="even">
-<td><a href="#fastcore.basics.val2idx">val2idx</a></td>
-<td>Dict from value to index</td>
+<td><a href="#fastcore.basics.last_index">last_index</a></td>
+<td>Finds the last index of occurence of <code>x</code> in <code>o</code> (returns -1 if no occurence)</td>
 </tr>
 <tr class="odd">
-<td><a href="#fastcore.basics.with_cast">with_cast</a></td>
-<td>Decorator which uses any parameter annotations as preprocessing functions</td>
+<td><a href="#fastcore.basics.listify">listify</a></td>
+<td>Convert <code>o</code> to a <code>list</code></td>
 </tr>
 <tr class="even">
-<td><a href="#fastcore.basics.wrap_class">wrap_class</a></td>
-<td>Decorator: makes function a method of a new class <code>nm</code> passing parameters to <code>mk_class</code></td>
+<td><a href="#fastcore.basics.loop_first">loop_first</a></td>
+<td>Iterate and generate a tuple with a flag for first value.</td>
 </tr>
 <tr class="odd">
-<td><a href="#fastcore.basics.zip_cycle">zip_cycle</a></td>
-<td>Like <code>itertools.zip_longest</code> but <code>cycle</code>s through elements of all but first argument</td>
+<td><a href="#fastcore.basics.loop_first_last">loop_first_last</a></td>
+<td>Iterate and generate a tuple with a flag for first and last value.</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.loop_last">loop_last</a></td>
+<td>Iterate and generate a tuple with a flag for last value.</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.map_ex">map_ex</a></td>
+<td>Like <code>map</code>, but use <code>bind</code>, and supports <code>str</code> and indexing</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.maps">maps</a></td>
+<td>Like <code>map</code>, except funcs are composed first</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.mapt">mapt</a></td>
+<td>Tuplified <code>map</code></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.maybe_attr">maybe_attr</a></td>
+<td><code>getattr(o,attr,o)</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.merge">merge</a></td>
+<td>Merge all dictionaries in <code>ds</code></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.mk_class">mk_class</a></td>
+<td>Create a class using <code>get_class</code> and add to the caller’s module</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.nested_attr">nested_attr</a></td>
+<td>Same as <code>getattr</code>, but if <code>attr</code> includes a <code>.</code>, then looks inside nested objects</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.nested_callable">nested_callable</a></td>
+<td>Same as <code>nested_attr</code> but if not found will return <code>noop</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.nested_idx">nested_idx</a></td>
+<td>Index into nested collections, dicts, etc, with <code>idxs</code></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.nested_setdefault">nested_setdefault</a></td>
+<td>Same as <code>setdefault</code>, but if <code>attr</code> includes a <code>.</code>, then looks inside nested objects</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.not_">not_</a></td>
+<td>Create new function that negates result of <code>f</code></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.num_cpus">num_cpus</a></td>
+<td>Get number of cpus</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.only">only</a></td>
+<td>Return the only item of <code>o</code>, raise if <code>o</code> doesn’t have exactly one item</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.otherwise">otherwise</a></td>
+<td><code>y if tst(x) else x</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.partialler">partialler</a></td>
+<td>Like <code>functools.partial</code> but also copies over docstring</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.patch">patch</a></td>
+<td>Decorator: add <code>f</code> to the first parameter’s class (based on f’s type annotations)</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.patch_property">patch_property</a></td>
+<td>Deprecated; use <code>patch(as_prop=True)</code> instead</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.patch_to">patch_to</a></td>
+<td>Decorator: add <code>f</code> to <code>cls</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.properties">properties</a></td>
+<td>Change attrs in <code>cls</code> with names in <code>ps</code> to properties</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.range_of">range_of</a></td>
+<td>All indices of collection <code>a</code>, if <code>a</code> is a collection, otherwise <code>range</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.renumerate">renumerate</a></td>
+<td>Same as <code>enumerate</code>, but returns index as 2nd element instead of 1st</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.replicate">replicate</a></td>
+<td>Create tuple of <code>item</code> copied <code>len(match)</code> times</td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.ret_false">ret_false</a></td>
+<td>Predicate: always <code>False</code></td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.ret_true">ret_true</a></td>
+<td>Predicate: always <code>True</code></td>
+</tr>
+<tr class="odd">
+<td><a href="#fastcore.basics.risinstance">risinstance</a></td>
+<td>Curried <code>isinstance</code> but with args reversed</td>
+</tr>
+<tr class="even">
+<td><a href="#fastcore.basics.set_nested_idx">set_nested_idx</a></td>
+<td>Set value indexed like <code>nested_idx | | [setattrs](#fastcore.basics.setattrs) |  | | [setify](#fastcore.basics.setify) | Turn any list like-object into a set. | | [signature_ex](#fastcore.basics.signature_ex) | Backport of</code>inspect.signature(…, eval_str=True<code>to &lt;py310 | | [snake2camel](#fastcore.basics.snake2camel) | Convert snake_case to CamelCase | | [sorted_ex](#fastcore.basics.sorted_ex) | Like</code>sorted<code>, but if key is str use</code>attrgetter<code>; if int use</code>itemgetter<code>| | [stop](#fastcore.basics.stop) | Raises exception</code>e<code>(by default</code>StopException<code>) | | [store_attr](#fastcore.basics.store_attr) | Store params named in comma-separated</code>names<code>from calling context into attrs in</code>self<code>| | [str2bool](#fastcore.basics.str2bool) | Case-insensitive convert string</code>s<code>too a bool (</code>y<code>,</code>yes<code>,</code>t<code>,</code>true<code>,</code>on<code>,</code>1<code>-&gt;</code>True<code>) | | [str_enum](#fastcore.basics.str_enum) | Simplified creation of</code>StrEnum<code>types | | [strcat](#fastcore.basics.strcat) | Concatenate stringified items</code>its<code>| | [tonull](#fastcore.basics.tonull) | Convert</code>None<code>to</code>null<code>| | [true](#fastcore.basics.true) | Test whether</code>x<code>is truthy; collections with &gt;0 elements are considered</code>True<code>| | [try_attrs](#fastcore.basics.try_attrs) | Return first attr that exists in</code>obj<code>| | [tuplify](#fastcore.basics.tuplify) | Make</code>o<code>a tuple | | [type_hints](#fastcore.basics.type_hints) | Like</code>typing.get_type_hints<code>but returns</code><code>if not allowed type | | [typed](#fastcore.basics.typed) | Decorator to check param and return types at runtime | | [union2tuple](#fastcore.basics.union2tuple) |  | | [uniqueify](#fastcore.basics.uniqueify) | Unique elements in</code>x<code>, optional</code>sort<code>, optional return reverse correspondence, optional prepend with elements. | | [using_attr](#fastcore.basics.using_attr) | Construct a function which applies</code>f<code>to the argument's attribute</code>attr<code>| | [val2idx](#fastcore.basics.val2idx) | Dict from value to index | | [with_cast](#fastcore.basics.with_cast) | Decorator which uses any parameter annotations as preprocessing functions | | [wrap_class](#fastcore.basics.wrap_class) | Decorator: makes function a method of a new class</code>nm<code>passing parameters to</code>mk_class<code>| | [zip_cycle](#fastcore.basics.zip_cycle) | Like</code>itertools.zip_longest<code>but</code>cycle`s through elements of all but first argument</td>
 </tr>
 </tbody>
 </table>
@@ -650,7 +755,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="fastcore.basics.exec_local" class="level3">
 <h3 class="anchored" data-anchor-id="fastcore.basics.exec_local">exec_local</h3>
 <p><code>basics.exec_local(code, var_name)</code></p>
-<p>Call <code>exec</code> on <code>code</code> and return the var `var_name</p>
+<p>Call <code>exec</code> on <code>code</code> and return the var <code>var_name</code></p>
 </section>
 <section id="fastcore.basics.exec_new" class="level3">
 <h3 class="anchored" data-anchor-id="fastcore.basics.exec_new">exec_new</h3>
@@ -945,6 +1050,11 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="fastcore.basics.strcat">strcat</h3>
 <p><code>basics.strcat(its, sep='')</code></p>
 <p>Concatenate stringified items <code>its</code></p>
+</section>
+<section id="fastcore.basics.tonull" class="level3">
+<h3 class="anchored" data-anchor-id="fastcore.basics.tonull">tonull</h3>
+<p><code>basics.tonull(x)</code></p>
+<p>Convert <code>None</code> to <code>null</code></p>
 </section>
 <section id="fastcore.basics.true" class="level3">
 <h3 class="anchored" data-anchor-id="fastcore.basics.true">true</h3>
